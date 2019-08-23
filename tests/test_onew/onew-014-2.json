@@ -1,0 +1,28 @@
+{
+  "description": "Extra ballots and tie breaker change winner"
+  ,"include": ["tests/test_onew/onew-014-base.json"]
+  ,"ballotsMore": [
+        [2, " CC AA BB"]
+        ]
+  ,"options": {}
+  ,"elected": " CC"
+  ,"statusCodes": [
+        ["AA", "defeated", 2, 8, 1],
+        ["BB", "defeated",  1, 6, 0],
+        ["CC", "elected", 2, 12, 1]
+        ]
+  ,"tally": {
+        "AA": [8, 8],
+        "BB": [6],
+        "CC": [6, 12],
+        ":Overvotes": [0, 0],
+        ":Abstentions": [0, 0],
+        ":Other exhausted": [0, 0],
+        ":Votes for candidates": [20.0, 20.0],
+        ":Total votes": [20.0, 20.0],
+        ":Quota": [10.000000001, 10.000000001],
+        ":Iterations": [1, 1],
+        ":Total surplus": [0.0, 1.999999999]
+  }
+}
+

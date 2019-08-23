@@ -1,0 +1,18 @@
+{
+  "description": "Replacement is not runner-up (original last defeated)"
+  ,"nbrSeatsToFill": 3
+  ,"candidates": " A B C D E F"
+  ,"ballots": [
+        [18, " A E C"],
+        [12, " A E D"],
+        [22, " B D"],
+        [20, " C"],
+        [16, " D"],
+        [8,  " E C"],
+        [4,  " F B C"]
+        ]
+  ,"maxRankingLevels": 6
+  ,"tieBreaker": ""
+  ,"options": {}
+}
+

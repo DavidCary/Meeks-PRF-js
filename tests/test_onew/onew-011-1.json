@@ -1,0 +1,6 @@
+{
+  "description": "Alternative defeats: not requested, first-round winner"
+  ,"include": ["tests/test_onew/onew-011-base.json", "tests/test_onew/onew-011-results1.json"]
+  ,"options": {}
+}
+

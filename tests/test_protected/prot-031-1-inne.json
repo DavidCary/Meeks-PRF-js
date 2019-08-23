@@ -1,0 +1,6 @@
+{
+  "description": "Basic altdef with replacement; original, altdef=inne"
+  ,"include": ["tests/test_protected/prot-031-base.json", "tests/test_protected/prot-031-1-results-prr.json"]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "if_no_new_electeds"}
+}
+

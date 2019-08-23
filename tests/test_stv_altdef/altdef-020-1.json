@@ -1,0 +1,9 @@
+{
+  "description": "differences in last-round votes with altdefs = N"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-020-base.json",
+        "tests/test_stv_altdef/altdef-020-results1.json"
+  ]
+  ,"options": {"alternative_defeats": "N"}
+}
+

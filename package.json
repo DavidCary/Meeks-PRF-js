@@ -1,0 +1,41 @@
+{
+  "name": "meeks-prf-js",
+  "version": "0.9.1",
+  "description": "Count votes for a Meek's method RCV / STV election contest using the prfound.org reference rule, with optional extensions.",
+  "main": "/run/meek.js",
+  "directories": {
+    "test": "tests"
+  },
+  "files": ["/src", "/run", "/index.js"],
+  "dependencies": {
+    "big-integer": "^1.6.44"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build-docs": "esdoc",
+    "build" : "babel --out-dir run src",
+    "build-one": "babel --out-dir run --"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidCary/Meeks-PRF-js"
+  },
+  "keywords": [
+    "Meek",
+    "Meeks",
+    "STV",
+    "tabulate",
+    "RCV"
+  ],
+  "author": "David Cary",
+  "license": "Apache-2.0"
+}

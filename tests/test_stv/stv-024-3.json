@@ -1,0 +1,21 @@
+{
+  "description": "Too few candidates: zero candidates, version 3, no first round"
+  ,"include": ["tests/test_stv/stv-024-base.json"]
+  ,"options": {"always_count_votes": false}
+  ,"candidates": ""
+  ,"ballots": [[3, " "]]
+  ,"elected": []
+  ,"statusCodes": [
+        ]
+  ,"tally": {
+        ":Overvotes": [],
+        ":Abstentions": [],
+        ":Other exhausted": [],
+        ":Votes for candidates": [],
+        ":Total votes": [],
+        ":Quota": [],
+        ":Iterations": [],
+        ":Total surplus": []
+  }
+}
+

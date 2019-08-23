@@ -1,0 +1,35 @@
+{
+  "description": "Quotas: whole number, 2 winners, version 1"
+  ,"include": ["tests/test_stv/stv-020-base.json"]
+  ,"nbrSeatsToFill": 2
+  ,"elected": ["A", "B"]
+  ,"statusCodes": [
+        ["A", "elected",  1, 84.0, 0.333333334],
+        ["B", "elected",  2, 55.999999944, 1],
+        ["C", "defeated", 2, 0.0, 1],
+        ["D", "defeated", 2, 0.0, 1],
+        ["E", "defeated", 2, 0.0, 1],
+        ["F", "defeated", 2, 0.0, 1],
+        ["G", "defeated", 2, 0.0, 1],
+        ["H", "defeated", 2, 0.0, 1]
+        ]
+  ,"tally": {
+        "A": [84.0, 28.000000056],
+        "B": [0.0, 55.999999944],
+        "C": [0.0, 0.0],
+        "D": [0.0, 0.0],
+        "E": [0.0, 0.0],
+        "F": [0.0, 0.0],
+        "G": [0.0, 0.0],
+        "H": [0.0, 0.0],
+        ":Overvotes": [0.0, 0.0],
+        ":Abstentions": [0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0],
+        ":Votes for candidates": [84.0, 84.0],
+        ":Total votes": [84.0, 84.0],
+        ":Quota": [28.000000001, 28.000000001],
+        ":Iterations": [1, 2],
+        ":Total surplus": [55.999999999, 27.999999998]
+  }
+}
+

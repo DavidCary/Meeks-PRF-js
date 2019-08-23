@@ -1,0 +1,16 @@
+{
+  "description": "General test, base"
+  ,"nbrSeatsToFill": 1
+  ,"candidates": " AA BB CC DD"
+  ,"ballots": [
+        [300, " AA BB CC"],
+        [250, " BB CC AA"],
+        [150, " CC BB AA"],
+        [50,  " CC AA BB"],
+        [170, " DD AA CC"]
+        ]
+  ,"maxRankingLevels": 3
+  ,"tieBreaker": ""
+  ,"elected": ["AA"]
+}
+

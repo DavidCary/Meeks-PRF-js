@@ -1,0 +1,8 @@
+{
+  "description": "altdef allowed by protected; replace A, proctect B, C, and D, altdef=bsd"
+  ,"include": ["tests/test_protected/prot-032-base.json", "tests/test_protected/prot-032-2-results-2.json"]
+  ,"excluded": " A"
+  ,"protected": " B C D"
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "before_single_defeats"}
+}
+

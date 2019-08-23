@@ -1,0 +1,22 @@
+{
+  "description": "An example RCV contest"
+  ,"elected": ["B"]
+  ,"status": [
+    ["B", "elected", 2, 5.0, 1.0],
+    ["A", "defeated", 2, 4.0, 1.0],
+    ["C", "defeated", 1, 2.0, 0.0]
+  ]
+  ,"tally": {
+    "B": [3.0, 5.0],
+    "A": [4.0, 4.0],
+    "C": [2.0],
+    ":Votes for candidates": [9.0, 9.0],
+    ":Overvotes": [0.0, 0.0],
+    ":Abstentions": [0.0, 0.0],
+    ":Other exhausted": [0.0, 0.0],
+    ":Total votes": [9.0, 9.0],
+    ":Quota": [4.500000001, 4.500000001],
+    ":Total surplus": [0.0, 0.499999999],
+    ":Iterations": [1, 1]
+  }
+}

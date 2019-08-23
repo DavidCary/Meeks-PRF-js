@@ -1,0 +1,8 @@
+{
+  "description": "Basic altdef with replacement; replace A, protect B, C, and D, altdef=prr"
+  ,"include": ["tests/test_protected/prot-031-base.json", "tests/test_protected/prot-031-2-results-prr.json"]
+  ,"excluded": " A"
+  ,"protected": " B C D"
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "per_reference_rule"}
+}
+

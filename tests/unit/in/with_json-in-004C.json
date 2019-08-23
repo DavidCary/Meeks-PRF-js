@@ -1,0 +1,7 @@
+{
+  "description": "readTabulationSpec 004C primary, before single defeats"
+  ,"include": ["tests/unit/in/with_json-in-004-base.json"]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "before_single_defeats"}
+}
+
+

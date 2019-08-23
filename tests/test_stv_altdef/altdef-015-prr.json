@@ -1,0 +1,10 @@
+{
+  "description": "C1 and C2 but only C3.2 (in R2, Defeat 2?): per reference rule"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-015-base.json",
+        "tests/test_stv_altdef/altdef-015-results2.json"
+  ]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "per_reference_rule"}
+}
+
+

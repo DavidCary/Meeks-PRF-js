@@ -1,0 +1,31 @@
+{
+  "description": "Replacement is not runner-up (original last defeated), replace A, no protection"
+  ,"include": ["tests/test_protected/prot-002-base.json"]
+  ,"excluded": " A"
+  ,"elected": " B C E"
+  ,"statusCodes": [
+        ["E", "elected", 1, 38.0, 0.613636377],
+        ["C", "elected", 2, 28.894736838, 0.776096855],
+        ["B", "elected", 4, 26.0, 1.0],
+        ["D", "defeated", 4, 20.636363476, 1.0],
+        ["F", "defeated", 3, 4.0, 0.0],
+        ["A", "defeated", 0, null, 1.0, "excluded"]
+  ]
+  ,"tally": {
+        "E": [38.0, 25.000000006, 23.318182326, 23.318182326],
+        "C": [20.0, 28.894736838, 23.318182518, 23.318182518],
+        "B": [22.0, 22.0, 22.0, 26.0],
+        "D": [16.0, 20.105263156, 20.636363476, 20.636363476],
+        "F": [4.0, 4.0, 4.0],
+        "A": [],
+        ":Votes for candidates": [100.0, 100.0, 93.27272832, 93.27272832],
+        ":Overvotes": [0.0, 0.0, 0.0, 0.0],
+        ":Abstentions": [0.0, 0.0, 6.72727168, 6.72727168],
+        ":Other exhausted": [0.0, 0.0, 0.0, 0.0],
+        ":Total votes": [100.0, 100.0, 100.0, 100.0],
+        ":Quota": [25.000000001, 25.000000001, 23.318182081, 23.318182081],
+        ":Total surplus": [12.999999999, 3.894736842, 6.82e-07, 2.681818601],
+        ":Iterations": [1, 2, 26, 1]
+  }
+}
+

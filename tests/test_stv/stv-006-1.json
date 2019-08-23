@@ -1,0 +1,38 @@
+{
+  "description": "Tie breaker: effective in first round, version 1"
+  ,"nbrSeatsToFill": 2
+  ,"candidates": " AA BB CC DD"
+  ,"ballots": [
+        [750, " AA BB CC"],
+        [700, " BB CC AA"],
+        [400, " CC DD AA"],
+        [150, " CC AA BB"],
+        [400, " DD CC AA"],
+        [150, " DD AA BB"]
+        ]
+  ,"maxRankingLevels": 4
+  ,"tieBreaker": " AA BB CC DD"
+  ,"options": {}
+  ,"elected": ["DD", "AA"]
+  ,"statusCodes": [
+        ["AA", "elected",  2, 900.0, 1],
+        ["BB", "defeated", 2, 700.0, 1],
+        ["CC", "defeated", 1, 550.0, 0],
+        ["DD", "elected",  2, 950.0, 1]
+        ]
+  ,"tally": {
+        "AA": [750.0, 900.0],
+        "BB": [700.0, 700.0],
+        "CC": [550.0],
+        "DD": [550.0, 950.0],
+        ":Overvotes": [0.0, 0.0],
+        ":Abstentions": [0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0],
+        ":Votes for candidates": [2550.0, 2550.0],
+        ":Total votes": [2550.0, 2550.0],
+        ":Quota": [850.000000001, 850.000000001],
+        ":Iterations": [1, 1],
+        ":Total surplus": [0.0, 149.999999998]
+  }
+}
+

@@ -1,0 +1,5 @@
+{
+  "description": "Unit test for readTabulationSpec 003."
+  ,"nbrSeatsToFill": 2
+  ,"maxRankingLevels": 3
+}   

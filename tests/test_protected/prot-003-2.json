@@ -1,0 +1,34 @@
+{
+  "description": "Replacement is not runner-up, protection needed, replace A, protect B and C"
+  ,"include": ["tests/test_protected/prot-003-base.json"]
+  ,"excluded": " A"
+  ,"protected": " B C"
+  ,"elected": " B C E"
+  ,"statusCodes": [
+        ["E", "elected", 2, 27.0, 1.0],
+        ["B", "elected", 2, 26.0, 1.0, "protected"],
+        ["C", "elected", 2, 20.0, 1.0, "protected"],
+        ["D", "defeated", 2, 23.0, 1.0],
+        ["F", "defeated", 1, 4.0, 0.0],
+        ["A", "defeated", 0, null, 1.0, "excluded"]
+  ]
+  ,"tally": {
+        "E": [27.0, 27.0],
+        "B": [22.0, 26.0],
+        "C": [20.0, 20.0],
+        "D": [23.0, 23.0],
+        "F": [4.0],
+        "A": [],
+        ":Votes for candidates": [96.0, 96.0],
+        ":Overvotes": [0.0, 0.0],
+        ":Abstentions": [0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0],
+        ":Total votes": [96.0, 96.0],
+        ":Protected quota": [24.000000001, 24.000000001],
+        ":Quota votes": [54.0, 51.999999999],
+        ":Quota": [27.000000001, 26.0],
+        ":Total surplus": [0.0, 2.999999999],
+        ":Iterations": [1, 1]
+  }
+}
+

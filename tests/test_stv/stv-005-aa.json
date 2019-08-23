@@ -1,0 +1,29 @@
+{
+  "description": "Irregular ranking patterns: no rankings, first-round abstention"
+  ,"include": ["tests/test_stv/stv-005-base.json"]
+  ,"ballotsMore": [
+        [1, "    "]
+        ]
+  ,"elected": ["BB", "AA"]
+  ,"statusCodes": [
+        ["AA", "elected",  2, 900.0, 1],
+        ["BB", "elected",  2, 1000.0, 1],
+        ["CC", "defeated", 1, 450.0, 0],
+        ["DD", "defeated", 2, 650.0, 1]
+        ]
+  ,"tally": {
+        "AA": [750.0, 900.0],
+        "BB": [700.0, 1000.0],
+        "CC": [450.0],
+        "DD": [650.0, 650.0],
+        ":Overvotes": [0.0, 0.0],
+        ":Abstentions": [1.0, 1.0],
+        ":Other exhausted": [0.0, 0.0],
+        ":Votes for candidates": [2550.0, 2550.0],
+        ":Total votes": [2551.0, 2551.0],
+        ":Quota": [850.000000001, 850.000000001],
+        ":Iterations": [1, 1],
+        ":Total surplus": [0.0, 199.999999998]
+  }
+}
+

@@ -1,0 +1,35 @@
+{
+  "description": "Extra ballots change winner; also irregular ranking patterns"
+  ,"include": ["tests/test_onew/onew-014-base.json"]
+  ,"ballotsMore": [
+        [6, " AA CC BB"],
+        [8, " CC AA BB"],
+        [3, ""],
+        [4, "   "],
+        [2, " # AA"],
+        [1, " BB #"],
+        [1, " BB "],
+        [1, " BB  AA"]
+        ]
+  ,"options": {}
+  ,"elected": " CC"
+  ,"statusCodes": [
+        ["AA", "defeated", 2, 15, 1],
+        ["BB", "defeated",  1, 9, 0],
+        ["CC", "elected", 2, 18, 1]
+        ]
+  ,"tally": {
+        "AA": [14, 15],
+        "BB": [9],
+        "CC": [12, 18],
+        ":Overvotes": [2, 3],
+        ":Abstentions": [7, 8],
+        ":Other exhausted": [0, 0],
+        ":Votes for candidates": [35.0, 33.0],
+        ":Total votes": [44.0, 44.0],
+        ":Quota": [17.500000001, 16.500000001],
+        ":Iterations": [1, 1],
+        ":Total surplus": [0.0, 1.499999999]
+  }
+}
+

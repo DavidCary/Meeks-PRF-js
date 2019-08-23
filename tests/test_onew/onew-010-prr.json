@@ -1,0 +1,6 @@
+{
+  "description": "Alternative defeats, per reference rule"
+  ,"include": ["tests/test_onew/onew-010-base.json", "tests/test_onew/onew-010-results1.json"]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "per_reference_rule"}
+}
+

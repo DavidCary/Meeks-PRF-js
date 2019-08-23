@@ -1,0 +1,27 @@
+{
+  "description": "Tie breaker: effective in three rounds, version 1"
+  ,"include": ["tests/test_onew/onew-008-base.json"]
+  ,"tieBreaker": " A B C D"
+  ,"elected": ["D"]
+  ,"statusCodes": [
+        ["A", "defeated", 1, 18, 0],
+        ["B", "defeated", 2, 24, 0],
+        ["C", "defeated", 3, 36, 1],
+        ["D", "elected", 3, 36, 1]
+        ]
+  ,"tally": {
+        "A": [18],
+        "B": [18, 24],
+        "C": [18, 24, 36],
+        "D": [18, 24, 36],
+        ":Overvotes": [0, 0, 0],
+        ":Abstentions": [0, 0, 0],
+        ":Other exhausted": [0, 0, 0],
+        ":Votes for candidates": [72.0, 72.0, 72.0],
+        ":Total votes": [72.0, 72.0, 72.0],
+        ":Quota": [36.000000001, 36.000000001, 36.000000001],
+        ":Iterations": [1, 1, 1],
+        ":Total surplus": [0.0, 0.0, 0.0]
+  }
+}
+

@@ -1,0 +1,9 @@
+{
+  "description": "Single defeats in R2 and R3 with pending surplus: no altdef"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-003-base.json",
+        "tests/test_stv_altdef/altdef-003-results1.json"
+  ]
+  ,"options": {}
+}
+

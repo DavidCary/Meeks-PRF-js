@@ -1,0 +1,41 @@
+{
+  "description": "Examples of irregular ranking patterns"
+  ,"nbrSeatsToFill": 2
+  ,"candidates": " AA BB CC"
+  ,"ballots": [
+        [5, " AA CC BB"],
+        [4, "   AA"],
+        [7, " CC AA BB"],
+        [4, " CC #"],
+        [3, []],
+        [4, ["", "", "" ]],
+        [2, " # AA"],
+        [6, " BB CC AA"],
+        [2, " BB # CC"],
+        [3, ["BB", ""]],
+        [5, ["BB", "", "AA"]]
+        ]
+  ,"maxRankingLevels": 3
+  ,"tieBreaker": " AA BB CC"
+  ,"options": {}
+  ,"elected": ["BB", "CC"]
+  ,"statusCodes": [
+        ["AA", "defeated", 2, 10.249999995, 1],
+        ["BB", "elected",  1, 16.0, 0.750000001],
+        ["CC", "elected", 2, 12.499999994, 1]
+        ]
+  ,"tally": {
+        "AA": [9.0, 10.249999995],
+        "BB": [16.0, 12.000000016],
+        "CC": [11.0, 12.499999994],
+        ":Overvotes": [2.0, 2.499999998],
+        ":Abstentions": [7.0, 7.749999997],
+        ":Other exhausted": [0.0, 0.0],
+        ":Votes for candidates": [36.0, 34.750000005],
+        ":Total votes": [45.0, 45.0],
+        ":Quota": [12.000000001, 11.583333336],
+        ":Iterations": [1, 2],
+        ":Total surplus": [3.999999999, 1.333333338]
+  }
+}
+

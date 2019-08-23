@@ -1,0 +1,9 @@
+{
+  "description": "Multiple-defeats in third round with pending surplus: no altdef"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-005-base.json",
+        "tests/test_stv_altdef/altdef-005-results1.json"
+  ]
+  ,"options": {}
+}
+

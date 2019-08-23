@@ -1,0 +1,139 @@
+K={
+  "DESTINY": {
+    "excluded": "excluded",
+    "normal": "normal",
+    "protected": "protected"
+  },
+  "Decimal": <function>,
+  "LABEL": {
+    "abstentions": ":Abstentions",
+    "nbrIterations": ":Iterations",
+    "otherExhausted": ":Other exhausted",
+    "overvotes": ":Overvotes",
+    "protectedQuota": ":Protected quota",
+    "quota": ":Quota",
+    "quotaVotes": ":Quota votes",
+    "totalCandidateVotes": ":Votes for candidates",
+    "totalSurplus": ":Total surplus",
+    "totalVotes": ":Total votes"
+  },
+  "MIN_RANKINGS_SUPPORTED": 3,
+  "ONE": @Decimal9:{
+    "_valueAsInteger": 1000000000
+  },
+  "OPTIONS": @_Option:{
+    "_jsId": "option",
+    "_value": "options",
+    "_valueToJsId": {
+      "alternative_defeats": "alternativeDefeats",
+      "always_count_votes": "alwaysCountVotes",
+      "ballot_tree": "ballotTree",
+      "type_of_altdefs": "typeOfAltDefs"
+    },
+    "_value_set": @Set:[
+      "alternative_defeats",
+      "type_of_altdefs",
+      "always_count_votes",
+      "ballot_tree"
+    ],
+    "alternativeDefeats": @_Option:{
+      "_jsId": "alternativeDefeats",
+      "_value": "alternative_defeats",
+      "_valueToJsId": {
+        "N": "never",
+        "Y": "yes"
+      },
+      "_value_set": @Set:[
+        "Y",
+        "N"
+      ],
+      "never": "N",
+      "yes": "Y"
+    },
+    "alwaysCountVotes": @_Option:{
+      "_jsId": "alwaysCountVotes",
+      "_value": "always_count_votes",
+      "_valueToJsId": {
+        "false": "no",
+        "true": "yes"
+      },
+      "_value_set": @Set:[
+        true,
+        false
+      ],
+      "no": false,
+      "yes": true
+    },
+    "ballotTree": @_Option:{
+      "_jsId": "ballotTree",
+      "_value": "ballot_tree",
+      "_valueToJsId": {
+        "dynamic": "dynamic",
+        "none": "none",
+        "static": "static"
+      },
+      "_value_set": @Set:[
+        "dynamic",
+        "static",
+        "none"
+      ],
+      "dynamic": "dynamic",
+      "none": "none",
+      "static": "static"
+    },
+    "typeOfAltDefs": @_Option:{
+      "_jsId": "typeOfAltDefs",
+      "_value": "type_of_altdefs",
+      "_valueToJsId": {
+        "before_single_defeats": "beforeSingleDefeats",
+        "if_no_new_electeds": "ifNoNewElecteds",
+        "per_reference_rule": "perRefRule"
+      },
+      "_value_set": @Set:[
+        "per_reference_rule",
+        "before_single_defeats",
+        "if_no_new_electeds"
+      ],
+      "beforeSingleDefeats": "before_single_defeats",
+      "ifNoNewElecteds": "if_no_new_electeds",
+      "perRefRule": "per_reference_rule"
+    }
+  },
+  "OTHER_LABELS_LIST": [
+    ":Votes for candidates",
+    ":Overvotes",
+    ":Abstentions",
+    ":Other exhausted",
+    ":Total votes",
+    ":Protected quota",
+    ":Quota votes",
+    ":Quota",
+    ":Total surplus",
+    ":Iterations"
+  ],
+  "RANKING_CODE": {
+    "overvote": "#",
+    "undervote": ""
+  },
+  "RANKING_CODES_NOT_A_CANDIDATE": @Set:[
+    "",
+    "#"
+  ],
+  "ROUND": {
+    "away": "away",
+    "nearest": "nearest",
+    "truncate": "truncate"
+  },
+  "STATUS": {
+    "defeated": "defeated",
+    "elected": "elected",
+    "hopeful": "hopeful"
+  },
+  "ULP": @Decimal9:{
+    "_valueAsInteger": 1
+  },
+  "ZERO": @Decimal9:{
+    "_valueAsInteger": 0
+  }
+}
+

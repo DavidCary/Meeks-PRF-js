@@ -1,0 +1,10 @@
+{
+  "description": "Quotas: base"
+  ,"candidates": " A B C D E F G H"
+  ,"ballots": [
+        [84, " A B C D E F G H"]
+        ]
+  ,"maxRankingLevels": 8
+  ,"tieBreaker": " A B C D E F G H"
+  ,"options": {}
+}

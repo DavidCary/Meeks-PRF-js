@@ -1,0 +1,17 @@
+{
+  "description": "Sample 01"
+  ,"nbrSeatsToFill": 3
+  ,"candidates": " A B C D E"
+  ,"tieBreaker": " D B E C A"
+  ,"options": {}
+  ,"maxRankingLevels": 5
+  ,"excluded": ""
+  ,"protected": ""
+  ,"ballots": [
+     [15, " A B C D E"],
+     [7,  " B C A E D"],
+     [2,  " C B A D E"],
+     [7,  " D E A B C"],
+     [9,  " E D C B A"]
+  ]
+}

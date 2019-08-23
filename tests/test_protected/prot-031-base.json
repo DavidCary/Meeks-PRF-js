@@ -1,0 +1,21 @@
+{
+  "description": "Basic altdef with replacement"
+  ,"nbrSeatsToFill": 4
+  ,"candidates": " A B C D E F G H I"
+  ,"ballots": [
+        [120, " A B D C E F"],
+        [60,  " B A D C F G E"],
+        [30,  " B D C F G E"],
+        [90,  " C D C F E"],
+        [50,  " D C F E"],
+        [70,  " E"],
+        [45,  " F D C F E"],
+        [20,  " G D E F"],
+        [10,  " H E F"],
+        [5,   " I C D F E"]
+        ]
+  ,"maxRankingLevels": 8
+  ,"tieBreaker": " B C"
+  ,"options": {}
+}
+

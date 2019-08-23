@@ -1,0 +1,15 @@
+{
+  "description": "An example RCV contest"
+  ,"nbrSeatsToFill": 1
+  ,"candidates": " A B C"
+  ,"ballots": [
+    [4, " A B C"],
+    [3, " B A C"],
+    [2, " C B A"]
+    ]
+  ,"maxRankingLevels": 3
+  ,"tie_breaker": " C A B"
+  ,"excluded": ""
+  ,"protected": ""
+  ,"options": {}
+}

@@ -1,0 +1,7 @@
+{
+  "description": "altdef allowed by protected; replace A, proctect B, C, and D, no altdef"
+  ,"include": ["tests/test_protected/prot-032-base.json", "tests/test_protected/prot-032-2-results-1.json"]
+  ,"excluded": " A"
+  ,"protected": " B C D"
+}
+

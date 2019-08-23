@@ -1,0 +1,115 @@
+With static ballot tree
+
+1 (5K ballots, 20 cands, 10 winners)
+    build ballot tree: nodes=7211 leaves=463 visited=100001 rounds=0 iterations=0 added=7211 deleted=0 elapsed=0.031
+    total: nodes=7211 leaves=463 visited=190044 rounds=18 iterations=107 added=7211 deleted=0 elapsed=0.437
+    tabulation elapsed time = 0.514
+Time:        0.965s, estimated 1s
+real	0m1.699s
+user	0m1.651s
+sys	0m0.132s
+
+
+1B (50K ballots)
+    build ballot tree: nodes=73684 leaves=7341 visited=1000001 rounds=0 iterations=0 added=73684 deleted=0 elapsed=0.249
+    total: nodes=73684 leaves=7341 visited=1195510 rounds=17 iterations=102 added=73684 deleted=0 elapsed=1.138
+    tabulation elapsed time = 1.379
+Time:        1.899s
+real	0m2.766s
+user	0m3.389s
+sys	0m0.203s
+
+
+1C (500K ballots)
+    build ballot tree: nodes=102699 leaves=11093 visited=10000001 rounds=0 iterations=0 added=102699 deleted=0 elapsed=2.024
+    total: nodes=102699 leaves=11093 visited=10197100 rounds=17 iterations=102 added=102699 deleted=0 elapsed=2.992
+    tabulation elapsed time = 4.923
+Time:        5.704s, estimated 6s
+real	0m6.472s
+user	0m8.013s
+sys	0m0.411s
+
+
+
+2
+    build ballot tree: nodes=248 leaves=20 visited=249 rounds=0 iterations=0 added=248 deleted=0 elapsed=0.000
+    total: nodes=248 leaves=20 visited=64404 rounds=19 iterations=627 added=248 deleted=0 elapsed=0.478
+    tabulation elapsed time = 0.588
+Time:        1.026s, estimated 2s
+real	0m1.759s
+user	0m1.707s
+sys	0m0.124s
+
+
+
+With dynamic ballot tree:
+1
+    build ballot tree: nodes=21 leaves=20 visited=5001 rounds=0 iterations=0 added=21 deleted=0 elapsed=0.008
+    total: nodes=881 leaves=192 visited=50265 rounds=18 iterations=107 added=891 deleted=10 elapsed=0.180
+    tabulation elapsed time = 0.257
+Time:        0.689s, estimated 1s
+real	0m1.411s
+user	0m1.409s
+sys	0m0.099s
+
+
+1B
+   build ballot tree: nodes=21 leaves=20 visited=50001 rounds=0 iterations=0 added=21 deleted=0 elapsed=0.072
+    total: nodes=2124 leaves=553 visited=338411 rounds=17 iterations=102 added=2139 deleted=15 elapsed=0.325
+    tabulation elapsed time = 0.557
+Time:        1.07s, estimated 2s
+real	0m1.824s
+user	0m2.059s
+sys	0m0.158s
+
+
+1C
+    build ballot tree: nodes=21 leaves=20 visited=500001 rounds=0 iterations=0 added=21 deleted=0 elapsed=0.546
+    total: nodes=2275 leaves=605 visited=3252423 rounds=17 iterations=102 added=2290 deleted=15 elapsed=1.814
+    tabulation elapsed time = 3.739
+Time:        4.53s, estimated 5s
+real	0m5.620s
+user	0m7.928s
+sys	0m0.520s
+
+
+2
+    build ballot tree: nodes=20 leaves=19 visited=21 rounds=0 iterations=0 added=20 deleted=0 elapsed=0.000
+    total: nodes=148 leaves=18 visited=50342 rounds=19 iterations=627 added=156 deleted=8 elapsed=0.382
+    tabulation elapsed time = 0.494
+Time:        0.934s, estimated 1s
+real	0m1.662s
+user	0m1.638s
+sys	0m0.112s
+
+
+
+With plain ballots:
+
+1
+    build ballot tree: nodes=0 leaves=0 visited=0 rounds=0 iterations=0 added=0 deleted=0 elapsed=0.000
+    total: nodes=0 leaves=0 visited=1328510 rounds=18 iterations=107 added=0 deleted=0 elapsed=9.577
+    tabulation elapsed time = 9.663
+Time:        10.105s, estimated 11s
+real	0m10.827s
+user	0m10.829s
+sys	0m0.141s
+
+1B
+    build ballot tree: nodes=0 leaves=0 visited=0 rounds=0 iterations=0 added=0 deleted=0 elapsed=0.000
+    total: nodes=0 leaves=0 visited=10815019 rounds=17 iterations=102 added=0 deleted=0 elapsed=79.823
+    tabulation elapsed time = 80.076
+Time:        80.598s, estimated 84s
+real	1m21.372s
+user	1m21.851s
+sys	0m0.234s
+
+2
+    build ballot tree: nodes=0 leaves=0 visited=0 rounds=0 iterations=0 added=0 deleted=0 elapsed=0.000
+    total: nodes=0 leaves=0 visited=60830 rounds=19 iterations=627 added=0 deleted=0 elapsed=0.488
+    tabulation elapsed time = 0.596
+Time:        1.02s, estimated 2s
+real	0m1.758s
+user	0m1.726s
+sys	0m0.104s
+

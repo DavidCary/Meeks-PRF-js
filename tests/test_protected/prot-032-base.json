@@ -1,0 +1,20 @@
+{
+  "description": "altdef allowed by protected"
+  ,"nbrSeatsToFill": 4
+  ,"candidates": " A B C D E F G H I J"
+  ,"ballots": [
+        [101, " A B C J E"],
+        [100, " B C J E"],
+        [100, " C J E"],
+        [15,  " D"],
+        [79,  " E"],
+        [58,  " F D"],
+        [25,  " G D"],
+        [12,  " H D"],
+        [10,  " I D"]
+        ]
+  ,"maxRankingLevels": 8
+  ,"tieBreaker": ""
+  ,"options": {}
+}
+

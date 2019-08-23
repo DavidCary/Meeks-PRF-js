@@ -1,0 +1,35 @@
+{
+  "description": "Basic protections: protect all winners"
+  ,"include": ["tests/test_protected/prot-001-base.json"]
+  ,"protected": " A B C"
+  ,"elected": " A B C"
+  ,"statusCodes": [
+        ["A", "elected", 1, 12.0, 1.0, "protected"],
+        ["B", "elected", 1, 10.0, 1.0, "protected"],
+        ["C", "elected", 1, 8.0, 1.0, "protected"],
+        ["D", "defeated", 1, 6.0, 1.0],
+        ["E", "defeated", 1, 6.0, 1.0],
+        ["F", "defeated", 1, 4.0, 1.0],
+        ["G", "defeated", 1, 2.0, 1.0]
+  ]
+  ,"tally": {
+        "A": [12.0],
+        "B": [10.0],
+        "C": [8.0],
+        "D": [6.0],
+        "E": [6.0],
+        "F": [4.0],
+        "G": [2.0],
+        ":Votes for candidates": [48.0],
+        ":Overvotes": [0.0],
+        ":Abstentions": [0.0],
+        ":Other exhausted": [0.0],
+        ":Total votes": [48.0],
+        ":Protected quota": [12.000000001],
+        ":Quota votes": [18.0],
+        ":Quota": [18.000000001],
+        ":Total surplus": [0.0],
+        ":Iterations": [1]
+  }
+}
+

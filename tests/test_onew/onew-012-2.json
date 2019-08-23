@@ -1,0 +1,6 @@
+{
+  "description": "alternative defeats: requested and used twice in rounds 3 and 4 of 5"
+  ,"include": ["tests/test_onew/onew-012-base.json", "tests/test_onew/onew-012-results2.json"]
+  ,"options": {"alternative_defeats": "Y"}
+}
+

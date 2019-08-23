@@ -1,0 +1,36 @@
+{
+  "description": "Basic protections: exclude first winner, protect other two"
+  ,"include": ["tests/test_protected/prot-001-base.json"]
+  ,"excluded": " A"
+  ,"protected": " B C"
+  ,"elected": " B C D"
+  ,"statusCodes": [
+    ["B", "elected", 1, 16.0, 0.750000001, "protected"],
+    ["D", "elected", 3, 12.0, 1.0],
+    ["C", "elected", 3, 11.499999986, 1.0, "protected"],
+    ["E", "defeated", 3, 6.499999998, 1.0],
+    ["F", "defeated", 3, 4.0, 1.0],
+    ["G", "defeated", 2, 2.0, 0.0],
+    ["A", "defeated", 0, null, 1.0, "excluded"]
+  ]
+  ,"tally": {
+    "B": [16.0, 12.000000016, 12.000000016],
+    "D": [12.0, 12.0, 12.0],
+    "C": [8.0, 11.499999986, 11.499999986],
+    "E": [6.0, 6.499999998, 6.499999998],
+    "F": [4.0, 4.0, 4.0],
+    "G": [2.0, 2.0],
+    "A": [],
+    ":Votes for candidates": [48.0, 48.0, 46.0],
+    ":Overvotes": [0.0, 0.0, 0.0],
+    ":Abstentions": [0.0, 0.0, 2.0],
+    ":Other exhausted": [0.0, 0.0, 0.0],
+    ":Total votes": [48.0, 48.0, 48.0],
+    ":Protected quota": [12.000000001, 12.000000001, 11.500000001],
+    ":Quota votes": [27.999999999, 24.500000013, 23.000000013],
+    ":Quota": [14.0, 12.250000007, 11.500000007],
+    ":Total surplus": [3.999999999, 1.5e-08, 1.000000008],
+    ":Iterations": [1, 2, 1]
+  }
+}
+

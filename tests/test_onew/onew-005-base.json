@@ -1,0 +1,15 @@
+{
+  "description": "Irregular ranking patterns: base data"
+  ,"nbrSeatsToFill": 1
+  ,"candidates": " AA BB CC"
+  ,"ballots": [
+        [300, " AA BB CC"],
+        [250, " BB CC AA"],
+        [150, " CC BB AA"],
+        [50,  " CC AA BB"]
+        ]
+  ,"maxRankingLevels": 4
+  ,"tieBreaker": " AA BB CC"
+  ,"options": {}
+}
+

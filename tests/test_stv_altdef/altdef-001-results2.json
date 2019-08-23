@@ -1,0 +1,30 @@
+{
+  "description": "Multiple-defeats in first round with no surplus: results with altdefs"
+  ,"statusCodes": [
+        ["A", "elected", 3, 31.0, 1.0],
+        ["C", "elected", 3, 31.0, 1.0],
+        ["B", "defeated", 3, 28.0, 1.0],
+        ["D", "defeated", 2, 20.0, 0.0],
+        ["E", "defeated", 1, 4.0, 0.0],
+        ["F", "defeated", 1, 2.0, 0.0],
+        ["G", "defeated", 1, 1.0, 0.0]
+  ]
+  ,"tally": {
+        "A": [21.0, 21.0, 31.0],
+        "C": [20.0, 21.0, 31.0],
+        "B": [22.0, 28.0, 28.0],
+        "D": [20.0, 20.0],
+        "E": [4.0],
+        "F": [2.0],
+        "G": [1.0],
+        ":Votes for candidates": [90.0, 90.0, 90.0],
+        ":Overvotes": [0.0, 0.0, 0.0],
+        ":Abstentions": [0.0, 0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0, 0.0],
+        ":Total votes": [90.0, 90.0, 90.0],
+        ":Quota": [30.000000001, 30.000000001, 30.000000001],
+        ":Total surplus": [0.0, 0.0, 1.999999998],
+        ":Iterations": [1, 1, 1]
+  }
+}
+

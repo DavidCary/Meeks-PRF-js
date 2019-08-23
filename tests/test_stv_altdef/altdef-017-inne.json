@@ -1,0 +1,9 @@
+{
+  "description": "C1 and C2 but only C3.4 (in R1, Defeat 2?): if no new electeds"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-017-base.json",
+        "tests/test_stv_altdef/altdef-017-results2.json"
+  ]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "if_no_new_electeds"}
+}
+

@@ -1,0 +1,10 @@
+{
+  "description": "Single defeats in R2 and R3 with pending surplus: per reference rule"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-003-base.json",
+        "tests/test_stv_altdef/altdef-003-results3.json"
+  ]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "per_reference_rule"}
+}
+
+

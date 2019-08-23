@@ -1,0 +1,14 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "outputAST": false,
+  "plugins": [
+    {"name": "esdoc-standard-plugin",
+      "option": {
+	"accessor": {"access": ["public"], "autoPrivate": true}
+        ,"brand": {"title": "Public API | Meeks-PRF-js"}
+      }
+    }
+  ]
+}
+

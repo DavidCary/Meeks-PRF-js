@@ -1,0 +1,26 @@
+{
+  "description": "Alternative defeats: results without altdefs"
+  ,"statusCodes": [
+        ["AA", "elected", 1, 16, 1],
+        ["BB", "defeated",  1, 8, 1],
+        ["CC", "defeated", 1, 4, 1],
+        ["DD", "defeated", 1, 2, 1],
+        ["EE", "defeated", 1, 1, 1]
+        ]
+  ,"tally": {
+        "AA": [16],
+        "BB": [8],
+        "CC": [4],
+        "DD": [2],
+        "EE": [1],
+        ":Overvotes": [0],
+        ":Abstentions": [0],
+        ":Other exhausted": [0],
+        ":Votes for candidates": [31.0],
+        ":Total votes": [31.0],
+        ":Quota": [15.500000001],
+        ":Iterations": [1],
+        ":Total surplus": [0.499999999]
+  }
+}
+

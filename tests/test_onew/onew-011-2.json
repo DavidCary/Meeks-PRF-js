@@ -1,0 +1,6 @@
+{
+  "description": "Alternative defeats: requested but first-round-winner without it"
+  ,"include": ["tests/test_onew/onew-011-base.json", "tests/test_onew/onew-011-results1.json"]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "before_single_defeats"}
+}
+

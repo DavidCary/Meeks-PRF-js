@@ -1,0 +1,27 @@
+{
+  "description": "Irregular ranking patterns: no rankings, first-round abstention"
+  ,"include": ["tests/test_onew/onew-005-base.json"]
+  ,"ballotsMore": [
+        [1, "    "]
+        ]
+  ,"elected": ["BB"]
+  ,"statusCodes": [
+        ["AA", "defeated", 2, 350, 1],
+        ["BB", "elected",  2, 400, 1],
+        ["CC", "defeated", 1, 200, 0]
+        ]
+  ,"tally": {
+        "AA": [300, 350],
+        "BB": [250, 400],
+        "CC": [200],
+        ":Overvotes": [0, 0],
+        ":Abstentions": [1, 1],
+        ":Other exhausted": [0, 0],
+        ":Votes for candidates": [750.0, 750.0],
+        ":Total votes": [751.0, 751.0],
+        ":Quota": [375.000000001, 375.000000001],
+        ":Iterations": [1, 1],
+        ":Total surplus": [0.0, 24.999999999]
+  }
+}
+

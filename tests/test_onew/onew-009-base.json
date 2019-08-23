@@ -1,0 +1,21 @@
+{
+  "description": "Alternative defeats; irregular voting patterns in combination"
+  ,"nbrSeatsToFill": 1
+  ,"candidates": " AA BB CC DD EE"
+  ,"ballots": [
+        [300, " AA BB CC"],
+        [250, " BB CC AA"],
+        [150, " CC BB AA"],
+        [50,  " CC AA BB"],
+        [1,   " DD EE CC"],
+        [2,   " DD  CC"],
+        [4,   " EE DD"],
+        [8,   " EE DD EE"],
+        [16,   " EE # DD"]
+        ]
+  ,"maxRankingLevels": 3
+  ,"tieBreaker": " AA BB CC"
+  ,"elected": ["BB"]
+}
+
+

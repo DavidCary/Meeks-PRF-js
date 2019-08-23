@@ -1,0 +1,36 @@
+{
+  "description": "Quotas: fractional, 2 winners, version 3"
+  ,"include": ["tests/test_stv/stv-020-base.json"]
+  ,"nbrSeatsToFill": 2
+  ,"ballotsMore": [[2, " A B C D E F G H"]]
+  ,"elected": ["A", "B"]
+  ,"statusCodes": [
+        ["A", "elected",  1, 86.0, 0.333333334],
+        ["B", "elected",  2, 57.333333276, 1],
+        ["C", "defeated", 2, 0.0, 1],
+        ["D", "defeated", 2, 0.0, 1],
+        ["E", "defeated", 2, 0.0, 1],
+        ["F", "defeated", 2, 0.0, 1],
+        ["G", "defeated", 2, 0.0, 1],
+        ["H", "defeated", 2, 0.0, 1]
+        ]
+  ,"tally": {
+        "A": [86.0, 28.666666724],
+        "B": [0.0, 57.333333276],
+        "C": [0.0, 0.0],
+        "D": [0.0, 0.0],
+        "E": [0.0, 0.0],
+        "F": [0.0, 0.0],
+        "G": [0.0, 0.0],
+        "H": [0.0, 0.0],
+        ":Overvotes": [0.0, 0.0],
+        ":Abstentions": [0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0],
+        ":Votes for candidates": [86.0, 86.0],
+        ":Total votes": [86.0, 86.0],
+        ":Quota": [28.666666667, 28.666666667],
+        ":Iterations": [1, 2],
+        ":Total surplus": [57.333333333, 28.666666666]
+  }
+}
+

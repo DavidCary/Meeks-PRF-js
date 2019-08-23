@@ -1,0 +1,16 @@
+{
+  "description": "Option values on cascading defeats"
+  ,"nbrSeatsToFill": 1
+  ,"candidates": " AA BB CC DD EE"
+  ,"ballots": [
+        [16, " AA"],
+        [8, " BB AA"],
+        [4, " CC BB AA"],
+        [2, " DD CC BB AA"],
+        [1, " EE DD CC BB AA"]
+        ]
+  ,"maxRankingLevels": 5
+  ,"tieBreaker": ""
+  ,"elected": ["AA"]
+}
+

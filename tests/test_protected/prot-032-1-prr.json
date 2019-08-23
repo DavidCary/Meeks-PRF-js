@@ -1,0 +1,6 @@
+{
+  "description": "altdef allowed by protected; original, altdef=prr"
+  ,"include": ["tests/test_protected/prot-032-base.json", "tests/test_protected/prot-032-1-results-prr.json"]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "per_reference_rule"}
+}
+

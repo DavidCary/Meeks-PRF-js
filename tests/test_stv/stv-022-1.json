@@ -1,0 +1,39 @@
+{
+  "description": "Multiple winners and transferred surplus in a round, version 1"
+  ,"include": ["tests/test_stv/stv-022-base.json"]
+  ,"ballotsMore": [
+        [24, " A B C E"],
+        [10, " C A B E"],
+        [8,  " D"],
+        [12, " E"]
+        ]
+  ,"nbrSeatsToFill": 4
+  ,"elected": ["A", "B", "C", "E"]
+  ,"statusCodes": [
+        ["A", "elected",  1, 40.0, 0.379488383],
+        ["B", "elected",  2, 24.999999976, 0.552284214],
+        ["C", "elected",  2, 24.999999984, 0.550999756],
+        ["D", "defeated", 3, 18.0, 1],
+        ["E", "elected",  3, 20.731662450, 1],
+        ["F", "defeated", 3, 0.0, 1],
+        ["G", "defeated", 3, 0.0, 1]
+        ]
+  ,"tally": {
+        "A": [40.0, 20.000000040, 20.284909949],
+        "B": [13.0, 24.999999976, 20.482235742],
+        "C": [17.0, 24.999999984, 20.501191859],
+        "D": [18.0, 18.0, 18.0],
+        "E": [12.0, 12.0, 20.731662450],
+        "F": [0.0, 0.0, 0.0],
+        "G": [0.0, 0.0, 0.0],
+        ":Overvotes": [0.0, 0.0, 0.0],
+        ":Abstentions": [0.0, 0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0, 0.0],
+        ":Votes for candidates": [100.0, 100.0, 100.0],
+        ":Total votes": [100.0, 100.0, 100.0],
+        ":Quota": [20.000000001, 20.000000001, 20.000000001],
+        ":Iterations": [1, 2, 6],
+        ":Total surplus": [19.999999999, 9.999999997, 1.999999996]
+  }
+}
+

@@ -1,0 +1,8 @@
+{
+  "description": "Multiple-defeats in first round with pending surplus: altdef"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-002-base.json",
+        "tests/test_stv_altdef/altdef-002-results2.json"
+  ]
+  ,"options": {"alternative_defeats": "Y"}
+}

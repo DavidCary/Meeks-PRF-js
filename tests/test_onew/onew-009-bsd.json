@@ -1,0 +1,6 @@
+{
+  "description": "Alternative defeats; irregular voting patterns, before single defeats"
+  ,"include": ["tests/test_onew/onew-009-base.json", "tests/test_onew/onew-009-results1.json"]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "before_single_defeats"}
+}
+

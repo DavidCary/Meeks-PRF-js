@@ -1,0 +1,35 @@
+{
+  "description": "alternative defeats: requested in rounds 1-3 used only in round 3 of 6"
+  ,"include": ["tests/test_onew/onew-012-base.json"]
+  ,"options": {"alternative_defeats": ["Y", "Y", "Y", "N", "N", "N"],
+        "type_of_altdefs": "before_single_defeats"}
+  ,"statusCodes": [
+        ["BB", "elected", 6, 95.0, 1.0],
+        ["AA", "defeated", 6, 94.0, 1.0],
+        ["CC", "defeated", 5, 24.0, 0.0],
+        ["DD", "defeated", 4, 23.0, 0.0],
+        ["EE", "defeated", 3, 6.0, 0.0],
+        ["FF", "defeated", 3, 4.0, 0.0],
+        ["GG", "defeated", 2, 2.0, 0.0],
+        ["HH", "defeated", 1, 1.0, 0.0]
+  ]
+  ,"tally": {
+        "BB": [48.0, 48.0, 48.0, 48.0, 71.0, 95.0],
+        "AA": [93.0, 93.0, 93.0, 94.0, 94.0, 94.0],
+        "CC": [24.0, 24.0, 24.0, 24.0, 24.0],
+        "DD": [12.0, 12.0, 14.0, 23.0],
+        "EE": [6.0, 6.0, 6.0],
+        "FF": [3.0, 4.0, 4.0],
+        "GG": [2.0, 2.0],
+        "HH": [1.0],
+        ":Votes for candidates": [189.0, 189.0, 189.0, 189.0, 189.0, 189.0],
+        ":Overvotes": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        ":Abstentions": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        ":Total votes": [189.0, 189.0, 189.0, 189.0, 189.0, 189.0],
+        ":Quota": [94.500000001, 94.500000001, 94.500000001, 94.500000001, 94.500000001, 94.500000001],
+        ":Total surplus": [0.0, 0.0, 0.0, 0.0, 0.0, 0.499999999],
+        ":Iterations": [1, 1, 1, 1, 1, 1]
+  }
+}
+

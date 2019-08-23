@@ -1,0 +1,9 @@
+{
+  "description": "Multiple-defeats in second round with no surplus: no altdef"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-004-base.json",
+        "tests/test_stv_altdef/altdef-004-results1.json"
+  ]
+  ,"options": {}
+}
+

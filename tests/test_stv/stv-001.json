@@ -1,0 +1,33 @@
+{
+  "description": "Simple 3-candidate, 2-winner come-from-behind win"
+  ,"nbrSeatsToFill": 2
+  ,"candidates": " A B C"
+  ,"ballots": [
+        [10, " A B C"],
+        [2,  " B C A"],
+        [3,  " C A B"]
+        ]
+  ,"maxRankingLevels": 3
+  ,"tieBreaker": " A B C"
+  ,"options": {}
+  ,"elected": " A B"
+  ,"statusCodes": [
+        ["A", "elected", 1, 10.0, 0.500000001],
+        ["B", "elected", 2,  6.999999990, 1],
+        ["C", "defeated", 2, 3.0, 1]
+        ]
+  ,"tally": {
+        "A": [10.0, 5.000000010],
+        "B": [2.0, 6.999999990],
+        "C": [3.0, 3.0],
+        ":Overvotes": [0.0, 0.0],
+        ":Abstentions": [0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0],
+        ":Votes for candidates": [15.0, 15.0],
+        ":Total votes": [15.0, 15.0],
+        ":Quota": [5.000000001, 5.000000001],
+        ":Iterations": [1, 2],
+        ":Total surplus": [4.999999999, 1.999999998]
+  }
+}
+

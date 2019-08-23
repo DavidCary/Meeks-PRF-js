@@ -1,0 +1,25 @@
+{
+  "print_results": false,
+  "description": "Basic protections"
+  ,"nbrSeatsToFill": 3
+  ,"candidates": " A B C D E F G"
+  ,"ballots": [
+        [6, " A B C D E F"],
+        [6, " A D B E C F"],
+        [8, " B C A E F D"],
+        [2, " B E C F A D"],
+        [5, " C A B F D E"],
+        [3, " C F A D B E"],
+        [4, " D E F G A B"],
+        [2, " D F E G C A"],
+        [4, " E"],
+        [2, " E"],
+        [3, " F"],
+        [1, " F"],
+        [2, " G"]
+        ]
+  ,"maxRankingLevels": 6
+  ,"tieBreaker": " A B C D E F G"
+  ,"options": {}
+}
+

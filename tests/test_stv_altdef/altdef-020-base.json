@@ -1,0 +1,28 @@
+{
+  "description": "differences in last-round votes with altdefs"
+  ,"nbrSeatsToFill": 3
+  ,"candidates": " A B C D E H I"
+  ,"tieBreaker": " H I"
+  ,"maxRankingLevels": 9
+  ,"options": {}
+  ,"ballots": [
+    [16, " A B H"],
+    [16, " A B I"],
+    [12, " B A H"],
+    [12, " B A I"],
+    [3,  " B"],
+    [1,  " C B D E A H"],
+    [2,  " D B C E A I"],
+    [1,  " E B A H"],
+    [2,  " E I"],
+    [2,  " E H"],
+    [2,  " A B H"],
+    [2,  " A B I"],
+    [2,  " B A H"],
+    [2,  " B A I"],
+    [4,  " H"],
+    [4,  " I"]
+  ]
+  ,"elected": ["A", "B", "I"]
+}
+

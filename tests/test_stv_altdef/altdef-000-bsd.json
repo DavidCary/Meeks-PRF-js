@@ -1,0 +1,6 @@
+{
+  "description": "Results not changed by use of altdefs: before single defeats"
+  ,"include": ["tests/test_stv_altdef/altdef-000-base.json"]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "before_single_defeats"}
+}
+

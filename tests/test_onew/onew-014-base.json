@@ -1,0 +1,14 @@
+{
+  "description": "Simple combinations of conditions"
+  ,"nbrSeatsToFill": 1
+  ,"candidates": " AA BB CC"
+  ,"ballots": [
+        [8, " AA BB CC"],
+        [6, " BB CC AA"],
+        [4, " CC BB AA"]
+        ]
+  ,"maxRankingLevels": 3
+  ,"tieBreaker": " BB CC AA"
+  ,"elected": ["BB"]
+}
+

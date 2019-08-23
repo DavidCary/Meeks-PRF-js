@@ -1,0 +1,9 @@
+{
+  "description": "C1 and C2 but only C3.2 (in R2, Defeat 2?): no altdef"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-015-base.json",
+        "tests/test_stv_altdef/altdef-015-results1.json"
+  ]
+  ,"options": {}
+}
+

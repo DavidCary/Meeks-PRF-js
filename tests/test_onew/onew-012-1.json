@@ -1,0 +1,6 @@
+{
+  "description": "alternative defeats: not requested but eligible in round 3 and 5 of 7"
+  ,"include": ["tests/test_onew/onew-012-base.json", "tests/test_onew/onew-012-results1.json"]
+  ,"options": {}
+}
+

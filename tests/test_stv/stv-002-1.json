@@ -1,0 +1,23 @@
+{
+  "description": "Quota calculation, round up below 5"
+  ,"include": ["tests/test_stv/stv-002-base.json"]
+  ,"statusCodes": [
+        ["A", "elected", 1, 11.0, 0.484848485],
+        ["B", "elected", 2,  7.666666665, 1],
+        ["C", "defeated", 2, 3.0, 1]
+        ]
+  ,"tally": {
+        "A": [11.0, 5.333333335],
+        "B": [2.0, 7.666666665],
+        "C": [3.0, 3.0],
+        ":Overvotes": [0.0, 0.0],
+        ":Abstentions": [0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0],
+        ":Votes for candidates": [16.0, 16.0],
+        ":Total votes": [16.0, 16.0],
+        ":Quota": [5.333333334, 5.333333334],
+        ":Iterations": [1, 2],
+        ":Total surplus": [5.666666666, 2.333333332]
+  }
+}
+

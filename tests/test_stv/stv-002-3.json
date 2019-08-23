@@ -1,0 +1,28 @@
+{
+  "description": "Quota calculation, ignore ballots not counting for candidates"
+  ,"include": ["tests/test_stv/stv-002-base.json"]
+  ,"ballotsMore": [
+        [1, " A"],
+        [1, ""],
+        [1, " #"]
+        ]
+  ,"statusCodes": [
+        ["A", "elected", 1, 12.0, 0.472222223],
+        ["B", "elected", 2,  7.805555547, 1],
+        ["C", "defeated", 2, 3.0, 1]
+        ]
+  ,"tally": {
+        "A": [12.0, 5.666666676],
+        "B": [2.0, 7.805555547],
+        "C": [3.0, 3.0],
+        ":Overvotes": [1.0, 1.0],
+        ":Abstentions": [1.0, 1.527777777],
+        ":Other exhausted": [0.0, 0.0],
+        ":Votes for candidates": [17.0, 16.472222223],
+        ":Total votes": [19.0, 19.0],
+        ":Quota": [5.666666667, 5.490740742],
+        ":Iterations": [1, 2],
+        ":Total surplus": [6.333333333, 2.490740739]
+  }
+}
+

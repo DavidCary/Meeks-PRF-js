@@ -1,0 +1,18 @@
+{
+  "description": "During replacement, two stay hopeful between quotas"
+  ,"nbrSeatsToFill": 3
+  ,"candidates": " A B C D E F"
+  ,"ballots": [
+        [18, " A D C"],
+        [27, " A E C"],
+        [23, " B C"],
+        [19, " C"],
+        [9,  " D C"],
+        [1,  " E B C"],
+        [3,  " F B C"]
+        ]
+  ,"maxRankingLevels": 6
+  ,"tieBreaker": ""
+  ,"options": {}
+}
+

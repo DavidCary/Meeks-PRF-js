@@ -1,0 +1,9 @@
+{
+  "description": "C1 and C2 but only C3.1 (in R1, Defeat 2?): before single defeats"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-014-base.json",
+        "tests/test_stv_altdef/altdef-014-results2.json"
+  ]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "before_single_defeats"}
+}
+

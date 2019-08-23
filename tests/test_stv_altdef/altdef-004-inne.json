@@ -1,0 +1,9 @@
+{
+  "description": "Multiple-defeats in second round with no surplus: if no new electeds"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-004-base.json",
+        "tests/test_stv_altdef/altdef-004-results2.json"
+  ]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "if_no_new_electeds"}
+}
+

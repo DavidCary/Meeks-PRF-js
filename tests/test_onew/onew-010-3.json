@@ -1,0 +1,5 @@
+{
+  "description": "Alternative defeats, requested and used - lower case"
+  ,"include": ["tests/test_onew/onew-010-base.json", "tests/test_onew/onew-010-results2.json"]
+  ,"options": {"alternative_defeats": "y"}
+}

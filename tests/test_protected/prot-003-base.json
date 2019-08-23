@@ -1,0 +1,17 @@
+{
+  "description": "Replacement is not runner-up, protection needed"
+  ,"nbrSeatsToFill": 3
+  ,"candidates": " A B C D E F"
+  ,"ballots": [
+        [18, " A D C"],
+        [27, " A E C"],
+        [22, " B D"],
+        [20, " C"],
+        [5,  " D C"],
+        [4,  " F B D"]
+        ]
+  ,"maxRankingLevels": 6
+  ,"tieBreaker": ""
+  ,"options": {}
+}
+

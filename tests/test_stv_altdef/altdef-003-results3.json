@@ -1,0 +1,26 @@
+{
+  "description": "Single defeats in R2 and R3 with pending surplus: results with altdef"
+  ,"statusCodes": [
+        ["A", "elected", 1, 31.0, 1.0],
+        ["C", "elected", 4, 31.0, 1.0],
+        ["B", "defeated", 4, 26.0, 1.0],
+        ["D", "defeated", 3, 14.0, 0.0],
+        ["E", "defeated", 2, 7.0, 0.0]
+  ]
+  ,"tally": {
+        "A": [31.0, 31.0, 31.0, 33.0],
+        "C": [18.0, 18.0, 19.0, 31.0],
+        "B": [20.0, 20.0, 26.0, 26.0],
+        "D": [14.0, 14.0, 14.0],
+        "E": [7.0, 7.0],
+        ":Votes for candidates": [90.0, 90.0, 90.0, 90.0],
+        ":Overvotes": [0.0, 0.0, 0.0, 0.0],
+        ":Abstentions": [0.0, 0.0, 0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0, 0.0, 0.0],
+        ":Total votes": [90.0, 90.0, 90.0, 90.0],
+        ":Quota": [30.000000001, 30.000000001, 30.000000001, 30.000000001],
+        ":Total surplus": [0.999999999, 0.999999999, 0.999999999, 3.999999998],
+        ":Iterations": [1, 1, 1, 1]
+  }
+}
+

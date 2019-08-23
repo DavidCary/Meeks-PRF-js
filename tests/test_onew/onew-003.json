@@ -1,0 +1,22 @@
+{
+  "description": "Raise exception on nbrSeatsToFill"
+  ,"nbrSeatsToFill": -1
+  ,"candidates": " A"
+  ,"ballots": [
+        [1, " A"]
+        ]
+  ,"maxRankingLevels": 3
+  ,"tieBreaker": " A"
+  ,"options": {}
+  ,"elected": ["A"]
+  ,"statusCodes": [
+        ["A", "elected", 1, 1, 1]
+        ]
+  ,"tally": {
+        "A": [1],
+        ":Overvotes": [0],
+        ":Abstentions": [0],
+        ":Other exhausted": [0]
+        }
+  ,"exception": ["MeekValueError", "nbrSeatsToFill is less than 1:"]
+}

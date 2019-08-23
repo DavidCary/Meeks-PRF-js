@@ -1,0 +1,8 @@
+{
+  "description": "Single defeats in R2 and R3 with pending surplus: altdef = Y"
+  ,"include": [
+        "tests/test_stv_altdef/altdef-003-base.json",
+        "tests/test_stv_altdef/altdef-003-results2.json"
+  ]
+  ,"options": {"alternative_defeats": "Y"}
+}

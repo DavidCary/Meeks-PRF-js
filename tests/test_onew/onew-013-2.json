@@ -1,0 +1,26 @@
+{
+  "description": "Alternative defeats: requested but not eligible"
+  ,"include": ["tests/test_onew/onew-013-base.json"]
+  ,"options": {"alternative_defeats": "Y"}
+  ,"statusCodes": [
+        ["AA", "elected",  2, 470, 1],
+        ["BB", "defeated", 2, 250, 1],
+        ["CC", "defeated", 2, 200, 1],
+        ["DD", "defeated", 1, 170, 0]
+        ]
+  ,"tally": {
+        "AA": [300, 470],
+        "BB": [250, 250],
+        "CC": [200, 200],
+        "DD": [170],
+        ":Overvotes": [0, 0],
+        ":Abstentions": [0, 0],
+        ":Other exhausted": [0, 0],
+        ":Votes for candidates": [920.0, 920.0],
+        ":Total votes": [920.0, 920.0],
+        ":Quota": [460.000000001, 460.000000001],
+        ":Iterations": [1, 1],
+        ":Total surplus": [0.0, 9.999999999]
+  }
+}
+

@@ -1,0 +1,32 @@
+{
+  "description": "Basic exclusions: exclude first three defeated"
+  ,"include": ["tests/test_excluded/excl-001-base.json"]
+  ,"elected": " A B C"
+  ,"excluded": " E F G"
+  ,"statusCodes": [
+        ["A", "elected", 1, 12.0, 0.770833334],
+        ["B", "elected", 1, 10.0, 0.813186814],
+        ["C", "elected", 2, 10.12499999, 1.0],
+        ["D", "defeated", 2, 8.374999996, 1.0],
+        ["E", "defeated", 0, null, 1.0, "excluded"],
+        ["F", "defeated", 0, null, 1.0, "excluded"],
+        ["G", "defeated", 0, null, 1.0, "excluded"]
+  ]
+  ,"tally": {
+        "A": [12.0, 9.250000008],
+        "B": [10.0, 9.250000006],
+        "C": [8.0, 10.12499999],
+        "D": [7.0, 8.374999996],
+        "E": [],
+        "F": [],
+        "G": [],
+        ":Votes for candidates": [37.0, 37.0],
+        ":Overvotes": [0.0, 0.0],
+        ":Abstentions": [11.0, 11.0],
+        ":Other exhausted": [0.0, 0.0],
+        ":Total votes": [48.0, 48.0],
+        ":Quota": [9.250000001, 9.250000001],
+        ":Total surplus": [3.499999998, 0.875000001],
+        ":Iterations": [1, 3]
+  }
+}

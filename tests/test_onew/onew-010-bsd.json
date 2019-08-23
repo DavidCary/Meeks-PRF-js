@@ -1,0 +1,6 @@
+{
+  "description": "Alternative defeats, before single defeats"
+  ,"include": ["tests/test_onew/onew-010-base.json", "tests/test_onew/onew-010-results2.json"]
+  ,"options": {"alternative_defeats": "Y", "type_of_altdefs": "before_single_defeats"}
+}
+

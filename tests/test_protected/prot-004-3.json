@@ -1,0 +1,31 @@
+{
+  "description": "During replacement, two stay hopeful between quotas; exclude A, no protection"
+  ,"include": ["tests/test_protected/prot-004-base.json"]
+  ,"excluded": " A"
+  ,"elected": " B D E"
+  ,"statusCodes": [
+        ["E", "elected", 1, 28.0, 0.892857143],
+        ["D", "elected", 1, 27.0, 0.925925926],
+        ["B", "elected", 3, 26.107142857, 1.0],
+        ["C", "defeated", 3, 23.892857137, 1.0],
+        ["F", "defeated", 2, 3.0, 0.0],
+        ["A", "defeated", 0, null, 1.0, "excluded"]
+  ]
+  ,"tally": {
+        "E": [28.0, 25.000000004, 25.000000004],
+        "D": [27.0, 25.000000002, 25.000000002],
+        "B": [23.0, 23.107142857, 26.107142857],
+        "C": [19.0, 23.892857137, 23.892857137],
+        "F": [3.0, 3.0],
+        "A": [],
+        ":Votes for candidates": [100.0, 100.0, 100.0],
+        ":Overvotes": [0.0, 0.0, 0.0],
+        ":Abstentions": [0.0, 0.0, 0.0],
+        ":Other exhausted": [0.0, 0.0, 0.0],
+        ":Total votes": [100.0, 100.0, 100.0],
+        ":Quota": [25.000000001, 25.000000001, 25.000000001],
+        ":Total surplus": [4.999999998, 4e-09, 1.10714286],
+        ":Iterations": [1, 2, 1]
+  }
+}
+

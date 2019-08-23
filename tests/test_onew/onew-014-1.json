@@ -1,0 +1,24 @@
+{
+  "description": "Simple 3-candidate from 2nd place to winner"
+  ,"include": ["tests/test_onew/onew-014-base.json"]
+  ,"options": {}
+  ,"statusCodes": [
+        ["AA", "defeated", 2, 8, 1],
+        ["BB", "elected",  2, 10, 1],
+        ["CC", "defeated", 1, 4, 0]
+        ]
+  ,"tally": {
+        "AA": [8, 8],
+        "BB": [6, 10],
+        "CC": [4],
+        ":Overvotes": [0, 0],
+        ":Abstentions": [0, 0],
+        ":Other exhausted": [0, 0],
+        ":Votes for candidates": [18.0, 18.0],
+        ":Total votes": [18.0, 18.0],
+        ":Quota": [9.000000001, 9.000000001],
+        ":Iterations": [1, 1],
+        ":Total surplus": [0.0, 0.999999999]
+  }
+}
+

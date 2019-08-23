@@ -1,0 +1,33 @@
+{
+  "description": "Tie breaker: effective in 1st and 2nd round, version 4"
+  ,"nbrSeatsToFill": 1
+  ,"candidates": " A B C"
+  ,"ballots": [
+        [20, " A B C"],
+        [10, " B C A"],
+        [10, " C B A"]
+        ]
+  ,"maxRankingLevels": 3
+  ,"tieBreaker": " C B A"
+  ,"options": {}
+  ,"elected": ["A"]
+  ,"statusCodes": [
+        ["A", "elected", 2, 20, 1],
+        ["B", "defeated", 2, 20, 1],
+        ["C", "defeated", 1, 10, 0]
+        ]
+  ,"tally": {
+        "A": [20, 20],
+        "B": [10, 20],
+        "C": [10],
+        ":Overvotes": [0, 0],
+        ":Abstentions": [0, 0],
+        ":Other exhausted": [0, 0],
+        ":Votes for candidates": [40.0, 40.0],
+        ":Total votes": [40.0, 40.0],
+        ":Quota": [20.000000001, 20.000000001],
+        ":Iterations": [1, 1],
+        ":Total surplus": [0.0, 0.0]
+  }
+}
+

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/results.js | Public API | Meeks-PRF-js</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Public API | Meeks-PRF-js"><meta property="twitter:description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ballot.js~Ballot.html">Ballot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9.html">Decimal9</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Error.html">Decimal9Error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Total.html">Decimal9Total</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekImplementationError.html">MeekImplementationError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekValueError.html">MeekValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/meek.js~Tabulation.html">Tabulation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/progress.js~Progress.html">Progress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/results.js~Results.html">Results</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/status.js~Status.html">Status</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBaseError.html">UtilBaseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBasicFunctions.html">UtilBasicFunctions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilValueError.html">UtilValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/validate.js~Validator.html">Validator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/with_json.js~WithJson.html">WithJson</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tabulate">tabulate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-K">K</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UBF">UBF</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/results.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @copyright 2016-2019 David Cary;
+ * @license Apache-2.0
+ *
+ * @module Meek
+ *
+ * @summary Tabulate RCV / STV per prfound.org&apos;s Meek&apos;s method.
+ */
+
+import {UBF} from &quot;./util_basic.js&quot;;
+import K from &quot;./constants.js&quot;;
+import {MeekValueError, MeekImplementationError}
+      from &quot;./errors.js&quot;;
+import {Status} from &apos;./status.js&apos;;
+
+/**
+ * The results of a tabulation.
+ *
+ * This class also includes various static functions that are
+ * useful for converting those results to strings and printing them
+ * to the console.
+ */
+class Results {
+  /**
+   * Store the three results of a tabulation.
+   * See the description of `Tabulation.tabulate()` for details.
+   * @param {Set&lt;string&gt;} elected - A set of elected candidate identifiers.
+   * @param {array&lt;Status&gt;} statuses - An array of statuses for each
+   *   candidate.
+   * @param {Object} tally - A data object with the round-by-round
+   *   tally of votes and other counts for each candidate and
+   *   other tabulation categories.
+   */
+  constructor(elected, statuses, tally) {
+    /** A set of elected candidate identifiers.
+     * @type {Set&lt;string&gt;} */
+    this.elected = elected;
+    /** An array of statuses for each candidate.
+     * @type {array&lt;Status&gt;} */
+    this.statuses = statuses;
+    /** A data object with the round-by-round tally of votes and other
+     * counts for each candidate and other tabulation categories.
+     * @type{Object} */
+    this.tally = tally;
+  }
+
+  /**
+   * Format as a string a set or array of elected candidate identifiers
+   *
+   * The resulting string can be a JSON fragment specifying an
+   * object property.
+   *
+   * @param {array|Set} elected
+   *   A set or array of elected candidate identifiers.
+   *
+   * @param {string} [prefix=&apos;&apos;]
+   *   A string that prefixes label.
+   *   This can specify a separating comma.
+   *
+   * @param {string} [label=&apos;&quot;elected&quot;: &apos;]
+   *   A string that labels the string.
+   *   This can specify a property key and its surrounding punctuation.
+   *
+   * @param {number} [indent1=2]
+   *   The number of spaces that prefix the first (and only) line.
+   *
+   * @param {string} [suffix=&apos;&apos;]
+   *   A string that is printed at the end of the line.
+   *   This can specify a separating comma.
+   *
+   * @return {string} A string representing elected in
+   *   standard sorted order.
+   */
+  static getElectedAsString(elected, prefix=&apos;&apos;, label=&apos;&quot;elected&quot;: &apos;,
+        indent1=2, suffix=&apos;&apos;) {
+
+    const electedArray = Array.from(elected);
+    electedArray.sort();
+    const coreContent = UBF.show(electedArray);
+    const result = &apos; &apos;.repeat(indent1) + prefix + label+ coreContent + suffix;
+    return result;
+  }
+
+  /** See the corresponding static class method for description.
+   * This method implicitly uses this.elected, so only prefix, label,
+   * indent1, and suffix are parameters. */
+  getElectedAsString(prefix, label, indent1, suffix) {
+    return Results.getElectedAsString(this.elected, prefix, label,
+          indent1, suffix);
+  }
+
+  /**
+   * Format a data object of candidate statuses as a string
+   *
+   * The resulting string can be a JSON fragment specifying an
+   * object property.
+   *
+   * @param {Object} statuses
+   *   A data object of Status objects, keyed by candidate identifiers.
+   *
+   * @param {string} [prefix=&apos;&apos;]
+   *   A string that prefixes label2.
+   *   This can specify a separating comma.
+   *
+   * @param {string} [label=&apos;&quot;status&quot;: &apos;]
+   *   A string that labels the string.
+   *   This can specify a property key and its surrounding punctuation.
+   *
+   * @param {number} [indent1=2]
+   *   The number of spaces that prefix the first and last lines.
+   *
+   * @param {number} [indent2=4]
+   *   The number of spaces that prefix each line other than the
+   *   first and last lines.
+   *
+   * @param {string} [suffix=&apos;&apos;]
+   *   A string that is printed at the end of the last line.
+   *   This can specify a separating comma.
+   *
+   * @return {string} A string representing the statuses in
+   *   standard sorted order.
+   */
+  static getStatusesAsString(statuses, prefix=&apos;&apos;, label=&apos;&quot;status&quot;: &apos;,
+        indent1=2, indent2=4, suffix=&apos;&apos;) {
+    const statusItems = UBF.getOwnItems(statuses);
+    statusItems.forEach((item) =&gt; {
+      item.sortKey = Results.getSortKey(item.name, statuses);
+    });
+    statusItems.sort(Results.compareSortKeys);
+    let result = &apos; &apos;.repeat(indent1)+prefix+label+&apos;[\n&apos;;
+    const lines = []
+    statusItems.forEach((item, index) =&gt; {
+      let line = &apos; &apos;.repeat(indent2) + &apos;[&apos;;
+      item.value.asArray().forEach((entry, ix) =&gt; {
+        line += ix === 0 ? &apos;&apos; : &apos;, &apos;;
+        if (typeof entry === &apos;string&apos;) {
+          line += UBF.show(entry);
+        } else if (entry instanceof K.Decimal) {
+          if (Number.isInteger(entry.toNumber())) {
+            line += String(entry.toNumber()) + &apos;.0&apos;;
+          } else {
+            line += String(entry.toNumber());
+          }
+        } else {
+          line += String(entry);
+        }
+      });
+      line += index === statusItems.length - 1 ? &apos;]&apos; : &apos;],&apos;;
+      lines.push(line);
+    });
+    result += lines.join(&apos;\n&apos;);
+    result += &apos;\n&apos;+&apos; &apos;.repeat(indent1)+&apos;]&apos;+suffix;
+    return result;
+  }
+
+  /** See the corresponding static class method for description.
+   * This method implicitly uses this.statuses, so only prefix, label,
+   * indent1, indent2, and suffix are parameters. */
+  getStatusesAsString(prefix, label, indent1, indent2, suffix) {
+    return Results.getStatusesAsString(this.statuses, prefix, label,
+          indent1, indent2, suffix);
+  }
+
+  /**
+   * Format a tally data object as a string
+   *
+   * The resulting string can be a JSON fragment specifying an
+   * object property.
+   *
+   * @param {Object} tally
+   *   A tally data object, keyed by candidate identifiers
+   *   and labels for other tabulation categories.
+   *
+   * @param {Object} statuses
+   *   A data object of Status objects, keyed by candidate identifiers.
+   *
+   * @param {string} [prefix=&apos;&apos;]
+   *   A string that prefixes label2.
+   *   This can specify a separating comma.
+   *
+   * @param {string} [label=&apos;&quot;tally&quot;: &apos;]
+   *   A string that labels the string.
+   *   This can specify a property key and its surrounding punctuation.
+   *
+   * @param {number} [indent1=2]
+   *   The number of spaces that prefix the first and last lines.
+   *
+   * @param {number} [indent2=4]
+   *   The number of spaces that prefix each line other than the
+   *   first and last lines.
+   *
+   * @param {string} [suffix=&apos;&apos;]
+   *   A string that is printed at the end of the last line.
+   *   This can specify a separating comma.
+   *
+   * @return {string} A string representing the statuses in
+   *   standard sorted order.
+   */
+  static getTallyAsString(tally, statuses, prefix=&apos;&apos;, label=&apos;&quot;tally&quot;: &apos;,
+        indent1=2, indent2=4, suffix=&apos;&apos;) {
+    const tallyItems = UBF.getOwnItems(tally);
+    tallyItems.forEach((item) =&gt; {
+      item.sortKey = Results.getSortKey(item.name, statuses);
+    });
+    tallyItems.sort(Results.compareSortKeys);
+    let result = &apos; &apos;.repeat(indent1)+prefix+label+&apos;{\n&apos;;
+    const lines = [];
+    tallyItems.forEach((item) =&gt; {
+      let line = &apos; &apos;.repeat(indent2)+&apos;&quot;&apos;+item.name+&apos;&quot;: &apos;;
+      line += &apos;[&apos;;
+      item.value.forEach((entry, ix) =&gt; {
+        line += (ix === 0 ? &apos;&apos; : &apos;, &apos;);
+        if (entry instanceof K.Decimal) {
+          if (Number.isInteger(entry.toNumber())) {
+            line += entry.toNumber().toString() + &apos;.0&apos;;
+          } else {
+            line += entry.toNumber().toString();
+          }
+        } else {
+          line += String(entry);
+        }
+      });
+      line += &apos;]&apos;;
+      lines.push(line);
+    });
+    result += lines.join(&apos;,\n&apos;);
+    result += &apos;\n&apos;+&apos; &apos;.repeat(indent1)+&apos;}&apos;+suffix;
+    return result;
+  }
+
+  /** See the corresponding static class method for description.
+   * This method implicitly uses this.tally and this.statuses,
+   * so only prefix, label, indent1, indent2, and suffix are parameters.
+   */
+  getTallyAsString(prefix, label, indent1, indent2, suffix) {
+    return Results.getTallyAsString(this.tally, this.statuses, prefix, label,
+        indent1, indent2, suffix);
+  }
+
+  /**
+   * Get a sort key for a candidate identifier or other tabulation
+   * category label.
+   *
+   * The sort key can be used to provide a standardized sort order
+   * for candidates and other tabulation categories,
+   * that reflects the results of a tabulation.
+   *
+   * The sort codes will sort:
+   * - candidates before other tabulation categories
+   *   - elected candidates before hopeful candidates
+   *     - elected candidates by increasing round of election,
+   *       then by decreasing votes
+   *   - hopeful candidates before defeated candidates
+   *     - hopeful candidates by decreasing votes
+   *   - defeated candidates by decreasing round of defeat,
+   *     then by decreasing votes
+   * - Other tabulation categories are sorted in the order recorded
+   *   in `K.OTHER_LABELS_ORDER`.
+   *
+   * Any remaining ties for sort order among candidates are resolved
+   * by the sort order of candidate identifiers.
+   *
+   * @param {string} code - The candidate identifier or label for a
+   *   tabulation category.
+   * @param {Object} statuses
+   *   A data object of Status objects, keyed by candidate identifiers.
+   * @return {array&lt;string|number|Decimal9&gt;} A sort key as an array of
+   *   strings and numbers, and/or Decimal9 instances.
+   */
+  static getSortKey(code, statuses) {
+    let sortKey = [[9, code]];
+    if (statuses[code] !== undefined) {
+      const nbrRound = statuses[code].nbrRound;
+      let votes = statuses[code].votes;
+      if (votes === null) {
+        votes = K.ONE.negative();
+      }
+      if (statuses[code].status === K.STATUS.elected) {
+        sortKey = [1, 1, nbrRound, votes.negative(), code];
+      } else if (statuses[code].status === K.STATUS.hopeful) {
+        sortKey = [1, 2, -nbrRound, votes.negative(), code];
+      } else {
+        sortKey = [1, 3, -nbrRound, votes.negative(), code];
+      }
+    } else {
+      let otherLabelsIndex = K.OTHER_LABELS_LIST.indexOf(code);
+      if (otherLabelsIndex &gt;= 0) {
+        sortKey = [2, otherLabelsIndex, code];
+      } else {
+        sortKey = [3, 1, code];
+      }
+    }
+    return sortKey;
+  }
+
+  /**
+   * Compare two sort keys that were built with `getSortKey()`.
+   *
+   * This function is useful as a comparison parameter to a sort
+   * function.
+   *
+   * @param {array} a - The first sort key to compare.
+   * @param {array} b - The second sort key to compare.
+   * @return {number} A comparison result value that is
+   *   less than zero if `a` sorts before `b`,
+   *   greater than zero if `a` sort after `b`,
+   *   and equal to zero if `a` sorts equal to `b`.
+   */
+  static compareSortKeys (a,b) {
+    let comparison = null;
+    a.sortKey.some((aKey, ix) =&gt; {
+      const bKey = b.sortKey[ix];
+      if (aKey instanceof K.Decimal) {
+        if (aKey.isLess(bKey)) {
+          comparison = -1;
+          return true;
+        }
+        if (aKey.isGreater(bKey)) {
+          comparison = 1;
+          return true;
+        }
+        comparison = 0;
+        return false;
+      }
+      if (aKey &lt; bKey) {
+        comparison = -1;
+        return true;
+      }
+      if (aKey &gt; bKey) {
+        comparison = 1;
+        return true;
+      }
+      comparison = 0;
+      return false;
+    });
+    return comparison;
+  }
+
+  /**
+   * Create an array with the keys of a tally in sorted order.
+   * @param {Object} tally - A tally data object.
+   * @param {Object} statuses
+   *   A data object of Status objects, keyed by candidate identifiers.
+   * @return {array&lt;string&gt;} - An array with the keys of tally in
+   *   sorted order. */
+  static getTallyOrderAsArray(tally, statuses) {
+    const tallyItems = UBF.getOwnItems(tally);
+
+    tallyItems.forEach((item) =&gt; {
+      item.sortKey = Results.getSortKey(item.name, statuses);
+    });
+    tallyItems.sort(Results.compareSortKeys);
+    const result = tallyItems.map((item) =&gt; {
+      return item.name;
+    });
+    return result;
+  }
+
+  /**
+   * Create a data object with sort-order indexes for
+   *   the keys of a tally object.
+   * @param {Object} tally - A tally data item.
+   * @param {Object} statuses
+   *   A data object of Status objects, keyed by candidate identifiers.
+   * @return {array&lt;string&gt;} - A data object keyed by the keys
+   *   of `tally` and values that are numbers indicating their
+   *   relative sort order.
+   */
+  static getTallyOrderAsLookup(tally, statuses) {
+    const asArray = Results.getTallyOrderAsArray(tally, statuses);
+    const result = {};
+    asArray.forEach((code, index) =&gt; {
+      result[code] = index;
+    });
+    return result;
+  }
+}
+
+export default Results;
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

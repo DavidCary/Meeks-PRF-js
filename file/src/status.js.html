@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/status.js | Public API | Meeks-PRF-js</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Public API | Meeks-PRF-js"><meta property="twitter:description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ballot.js~Ballot.html">Ballot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9.html">Decimal9</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Error.html">Decimal9Error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Total.html">Decimal9Total</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekImplementationError.html">MeekImplementationError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekValueError.html">MeekValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/meek.js~Tabulation.html">Tabulation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/progress.js~Progress.html">Progress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/results.js~Results.html">Results</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/status.js~Status.html">Status</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBaseError.html">UtilBaseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBasicFunctions.html">UtilBasicFunctions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilValueError.html">UtilValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/validate.js~Validator.html">Validator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/with_json.js~WithJson.html">WithJson</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tabulate">tabulate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-K">K</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UBF">UBF</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/status.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @copyright 2016-2019 David Cary;
+ * @license Apache-2.0
+ *
+ * @module Status
+ */
+
+import K from &quot;./constants.js&quot;;
+
+/**
+ *
+ * A class to record a candidate&apos;s status in a Meek tabulation.
+ */
+export class Status {
+  /**
+   * @param {(string|object)} candidate -
+   *   the candidate identifier for the candidate.
+   *
+   *   If the candidate argument is an object,
+   *   then expect that it is a Status or is Status-like
+   *   and initialize this Status object
+   *   from the corresponding keys of that object.
+   * @param {K.Decimal|null} [votes=K.ZERO] - The number of votes for the
+   *   candidate; null before the first round and for excluded
+   *   candidates.
+   * @param {number} [nbrRound=0] - The 1-based number of the
+   *   round for which this status applies or the round in which the
+   *   candidate was elected or defeated.
+   * @param {string} [status=K.STATUS.hopeful] - A string indicating the
+   *   status of the candidate.  The value should be one in K.STATUS.
+   * @param {number} [keepFactor=K.ONE] - The fraction of a ballot&apos;s
+   *   vote weight that is counted for the candidate.
+   * @param {string} [destiny=K.DESTINY.normal] - An indication of
+   *   whether the candidate was pre-designated as excluded or protected.
+   *   The value should be one in K.DESTINY.
+   *
+   */
+  constructor (candidate, votes=K.ZERO, nbrRound=0,
+        status=K.STATUS.hopeful, keepFactor=K.ONE,
+        destiny=K.DESTINY.normal) {
+    if (typeof(candidate) == &apos;object&apos;) {
+      /** The candidate identifier.
+       *  @type {string} */
+      this.candidate = candidate[&apos;candidate&apos;];
+      /** The number of votes for the candidate when the candidate was
+       *    elected or defeated, or as of the most recent tabulation of
+       *    votes if the candidate is hopeful; `null` if the candidate
+       *    is excluded or if no rounds have been tabulated yet.
+       *  @type {K.Decimal|null} */
+      this.votes = candidate[&apos;votes&apos;];
+      /** The 1-based number of the round for which votes applies,
+       *    possibly 0 if votes is null.
+       *  @type {number} */
+      this.nbrRound = candidate[&apos;nbrRound&apos;];
+      /** A string indicating the status of
+       *    the candidate; a value in `K.STATUS`.
+       *  @type {string} */
+      this.status = candidate[&apos;status&apos;];
+      /** The fraction of a ballot&apos;s vote weight that was counted for
+       *    the candidate.
+       *  @type {number} */
+      this.keepFactor = candidate[&apos;keepFactor&apos;];
+      /** An indication of whether the candidate was pre-designated as
+       *    excluded, as protected, or neither.  The value should be
+       *    in `K.DESTINY`.
+       *  @type {string} destiny */
+      this.destiny = candidate[&apos;destiny&apos;] || K.DESTINY.normal;
+    } else {
+      this.candidate = candidate;
+      this.votes = votes;
+      this.nbrRound = nbrRound;
+      this.status = status;
+      this.keepFactor = keepFactor;
+      this.destiny = destiny;
+    }
+    if (this.candidate === null || this.candidate === undefined) {
+      this.candidate = &apos;:???&apos;;
+    }
+  }
+
+  /**
+   * Create a corresponding plain data object.
+   * @returns {object} An object that has keys and properties corresponding to
+   * the data properties of this object.
+   */
+  asSimpleObject() {
+    const result = {&apos;candidate&apos;: this.candidate, &apos;votes&apos;: this.votes,
+          &apos;nbrRound&apos;: this.nbrRound, &apos;status&apos;: this.status,
+          &apos;keepFactor&apos;: this.keepFactor, &apos;destiny&apos;: this.destiny};
+    return result;
+  }
+
+  /**
+   * Create a corresponding array with the data values.
+   * @returns {array} An array that lists the values of the status
+   *   properties as follows:
+   *
+   *       [candidate, status, nbrRound, votes, keepFactor, destiny]
+   *
+   *   where destiny is omitted if it is &apos;normal&apos;.
+   */
+  asArray() {
+    const result = [this.candidate, this.status, this.nbrRound,
+          this.votes, this.keepFactor];
+    if (this.destiny !== K.DESTINY.normal) {
+      result.push(this.destiny);
+    }
+    return result;
+  }
+
+  /**
+   * Create a string representation of the keys and values.
+   * @returns {string} A string that lists the keys and values of the
+   *   `Status` properties in the format of a data object literal,
+   *   omitting the key and value for destiny if its value is &apos;normal&apos;.
+   */
+  toString() {
+    let result = &apos;{&apos;
+    result += &apos;candidate: &apos; + (
+          this.candidate === null || this.candidate === undefined ?
+          this.candidate : &apos;&quot;&apos; + this.candidate.toString() + &apos;&quot;&apos;);
+    result += &apos;, status: &quot;&apos; + this.status.toString() + &apos;&quot;&apos;;
+    result += &apos;, nbrRound: &apos; + (
+          this.nbrRound === null ? this.nbrRound : this.nbrRound.toString());
+    result += &apos;, votes: &apos; + this.votes.toString();
+    result += &apos;, keepFactor: &apos; + this.keepFactor.toString();
+    if (this.destiny !== K.DESTINY.normal) {
+      result += &apos;, destiny: &quot;&apos; + this.destiny.toString() + &apos;&quot;&apos;;
+    }
+    result += &apos;}&apos;;
+    return result;
+  }
+
+  /**
+   * Test for `Status` equality.
+   *
+   * Tests whether another value has the same values corresponding
+   *   to the properties of this `Status` instance.
+   * @param {*} other - A value to be compared.
+   * @returns {boolean} A true/false indication of whether `other` has
+   *   the same `Status` property values as the calling Status.
+   */
+  isEqual(other) {
+    let isEqual = true;
+    try {
+      if (this.candidate !== other.candidate) {
+        return false;
+      }
+      if (this.status !== other.status) {
+        return false;
+      }
+      if (this.nbrRound !== other.nbrRound) {
+        return false;
+      }
+      if (this.votes.isNotEqual(other.votes)) {
+        return false;
+      }
+      if (this.keepFactor.isNotEqual(other.keepFactor)) {
+        return false;
+      }
+      if (this.destiny !== other.destiny) {
+        return false;
+      }
+    }
+    catch (err) {
+      isEqual = false;
+    }
+    return isEqual;
+  }
+
+  /**
+   * Test for `Status` inequality.
+   *
+   * Tests whether another value has any different values
+   *   corresponding to those of this Status instance.
+   * @param {*} other - A value to be compared.
+   * @returns {boolean} A true/false indication of whether any of the
+   *   calling Status object&apos;s property values are different from the
+   *   corresponding values for `other`.
+   */
+  isNotEqual(other) {
+    const result = !this.isEqual(other);
+    return result;
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

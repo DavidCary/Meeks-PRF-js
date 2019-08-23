@@ -1,0 +1,182 @@
+{
+  "coverage": "65.66%",
+  "expectCount": 332,
+  "actualCount": 218,
+  "files": {
+    "src/ballot.js": {
+      "expectCount": 11,
+      "actualCount": 9,
+      "undocumentLines": [
+        30,
+        31
+      ]
+    },
+    "src/constants.js": {
+      "expectCount": 13,
+      "actualCount": 7,
+      "undocumentLines": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        47
+      ]
+    },
+    "src/decimal9.js": {
+      "expectCount": 39,
+      "actualCount": 29,
+      "undocumentLines": [
+        14,
+        15,
+        16,
+        18,
+        19,
+        20,
+        452,
+        87,
+        361,
+        363
+      ]
+    },
+    "src/errors.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "src/meek.js": {
+      "expectCount": 97,
+      "actualCount": 25,
+      "undocumentLines": [
+        24,
+        587,
+        588,
+        589,
+        590,
+        591,
+        592,
+        593,
+        594,
+        596,
+        835,
+        858,
+        871,
+        889,
+        893,
+        894,
+        899,
+        901,
+        911,
+        912,
+        916,
+        919,
+        920,
+        932,
+        949,
+        955,
+        956,
+        971,
+        980,
+        993,
+        1037,
+        1061,
+        1075,
+        1086,
+        1102,
+        1178,
+        1222,
+        1223,
+        1224,
+        1225,
+        1262,
+        1277,
+        1295,
+        1300,
+        1341,
+        1342,
+        1354,
+        1361,
+        1404,
+        1455,
+        1465,
+        1475,
+        1478,
+        1480,
+        1482,
+        1488,
+        1496,
+        1502,
+        1513,
+        1524,
+        1537,
+        1550,
+        1563,
+        1574,
+        1588,
+        1607,
+        1620,
+        1631,
+        1652,
+        1687,
+        1735,
+        1771
+      ]
+    },
+    "src/progress.js": {
+      "expectCount": 42,
+      "actualCount": 42,
+      "undocumentLines": []
+    },
+    "src/results.js": {
+      "expectCount": 15,
+      "actualCount": 15,
+      "undocumentLines": []
+    },
+    "src/status.js": {
+      "expectCount": 13,
+      "actualCount": 13,
+      "undocumentLines": []
+    },
+    "src/util_basic.js": {
+      "expectCount": 75,
+      "actualCount": 53,
+      "undocumentLines": [
+        293,
+        314,
+        521,
+        522,
+        523,
+        524,
+        535,
+        536,
+        537,
+        538,
+        539,
+        540,
+        547,
+        562,
+        571,
+        596,
+        597,
+        598,
+        600,
+        607,
+        614,
+        618
+      ]
+    },
+    "src/validate.js": {
+      "expectCount": 11,
+      "actualCount": 11,
+      "undocumentLines": []
+    },
+    "src/with_json.js": {
+      "expectCount": 12,
+      "actualCount": 10,
+      "undocumentLines": [
+        22,
+        23
+      ]
+    }
+  }
+}

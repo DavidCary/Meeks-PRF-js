@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | Public API | Meeks-PRF-js</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Public API | Meeks-PRF-js"><meta property="twitter:description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ballot.js~Ballot.html">Ballot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9.html">Decimal9</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Error.html">Decimal9Error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Total.html">Decimal9Total</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekImplementationError.html">MeekImplementationError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekValueError.html">MeekValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/meek.js~Tabulation.html">Tabulation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/progress.js~Progress.html">Progress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/results.js~Results.html">Results</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/status.js~Status.html">Status</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBaseError.html">UtilBaseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBasicFunctions.html">UtilBasicFunctions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilValueError.html">UtilValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/validate.js~Validator.html">Validator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/with_json.js~WithJson.html">WithJson</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tabulate">tabulate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-K">K</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UBF">UBF</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="meeks-prf-js">Meeks-PRF-js</h1><p>Count votes for a Meek&apos;s method RCV / STV election contest using Javascript
+software.</p>
+<h1 id="table-of-contents">Table of Contents</h1><ul>
+<li><a href="#quick-start">Quick start</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#version">Version</a></li>
+<li><a href="#repository-structure">Repository structure</a></li>
+<li><a href="#use-examples">Use examples</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#limitations">Limitations</a></li>
+<li><a href="#extensions">Extensions</a></li>
+<li><a href="#other-commands">Other commands</a></li>
+<li><a href="#licensing">Licensing</a></li>
+</ul>
+<h2 id="quick-start">Quick start</h2><p>For use with Node, this package can be installed with npm,
+by creating a new directory / folder, for example <strong><code>meeks-prf</code></strong>,
+and then from the command line, changing to that directory and running
+the command:</p>
+<pre><code><code class="source-code prettyprint">npm install @dcary/meeks-prf-js</code>
+</code></pre><p>You can then tabulate a contest with the command:</p>
+<pre><code><code class="source-code prettyprint">node . input.json results.json</code>
+</code></pre><p>where the file <strong><code>input.json</code></strong> has the contest input data and
+<strong><code>results.json</code></strong> is the output file to which results will be written.
+A sample input file is provided at <strong><code>./uses/sample-01-in.json</code></strong>.</p>
+<p>More generally, if the current directory is not the project directory,
+you can use the command:</p>
+<pre><code><code class="source-code prettyprint">node path-to/meeks-prf input.json results.json</code>
+</code></pre><p>Other ways of using the package are described below.</p>
+<h2 id="introduction">Introduction</h2><p>Use this Javascript package to count votes for a
+ranked choice voting (RCV) /
+single transferable vote (STV) election contest
+using the Proportional Representation Foundation&apos;s
+ <a href="https://prfound.org/resources/reference/reference-meek-rule/">reference rule for Meek&apos;s method</a> and
+various extension to that rule.</p>
+<p>The Javascript programs in this package can be directly used
+in modern browsers.
+The package also includes versions of those programs that have been
+converted for use in Node.
+Use in other browsers requires additional support not included in
+this package.</p>
+<p>Meek&apos;s method is a form of RCV / STV that supports proportional
+representation in multi-winner elections.
+It can provide a fairer and more comprehensive transfer of surplus
+than other forms of STV,
+including variations of the weighted inclusive Gregory method (WIGM)
+which also involves transfers of surplus as fractions of a vote.
+Any form of STV tends to provide fairer results than other
+traditional election methods
+and greatly reduces the practical opportunities for tactical
+voting.
+However Meek&apos;s method accomplishes this better than
+and precludes some of the opportunities for tactical voting
+that still exist with other forms of STV, including varieties of WIGM.
+However the tradeoff is that Meek&apos;s method is more computationally
+intensive,
+to the extent that it is typically not practical to count votes with
+Meek&apos;s method without the assistance of a computer for contests with
+more than a few winners.</p>
+<p>The reference rule published by the Proportional Representation
+Foundation is particularly significant because it ensures that
+independent but conforming implementations will always produce the same
+result, provided that any ties are consistently resolved.</p>
+<h2 id="version">Version</h2><p>This is version 0.9.1 of the Meeks-PRF-js project. It has stable, well
+tested functionality.
+The 0.9.x versions will be used to refine initial
+published packaging.
+This version includes similar functionality of v3.0.0 of
+<a href="https://bitbucket.org/David-Cary/meeks-prfound/src/master/">a related Python project</a>,
+with some additional improvements.</p>
+<h2 id="repository-structure">Repository structure</h2><p>The <strong><code>src</code></strong> directory contains the Javascript
+vote counting programs that can be run directly in modern browsers and
+which are ES modules.
+The <strong><code>run</code></strong> directory has corresponding programs that can run in
+Node v10 and later.  The <strong><code>tests</code></strong> directory contains
+test programs and data.  The <strong><code>docs</code></strong> directory has public API
+documentation as HTML.</p>
+<p>The vote counting tabulation algorithm can be invoked with the
+<strong><code>Meek.tabulate()</code></strong> function, where <strong><code>Meek</code></strong> is the imported /
+required name
+for the <strong><code>meek.js</code></strong> file from either the <strong><code>src</code></strong> or <strong><code>run</code></strong>
+directories.  Those files contain additional documentation
+about the <strong><code>tabulate()</code></strong> function.</p>
+<h2 id="use-examples">Use Examples</h2><p>Three ways to run a Meek&apos;s method tabulation are:</p>
+<ul>
+<li><a href="#markdown-header-caller-gives-data-directly">Caller gives data directly</a></li>
+<li><a href="#markdown-header-caller-gives-data-in-json-files">Caller gives data in JSON files</a></li>
+<li><a href="#markdown-header-command-line-using-json-files">Command line using JSON files</a></li>
+</ul>
+<h3 id="caller-gives-data-directly">Caller gives data directly</h3><p>After importing / requiring <strong><code>meek.js</code></strong>, for example with:</p>
+<pre><code><code class="source-code prettyprint">import * as Meek from &apos;path-to/src/meek.js&apos;;</code>
+</code></pre><p>tabulation of RCV votes can be accomplished by calling the
+<strong><code>Meek.tabulate()</code></strong> function, which is defined with the signature:</p>
+<pre><code><code class="source-code prettyprint">function tabulate(nbrSeatsToFill, candidates, ballots,
+      maxRankingLevels, tieBreaker, excluded, protectedzz,
+      options={}, progressCallback=null):</code>
+</code></pre><p>For example:</p>
+<pre><code><code class="source-code prettyprint">const results = Meeks.tabulate(1, &quot; A B C&quot;, [
+      [4, &apos; A B C&apos;],
+      [3, &apos; B A C&apos;],
+      [2, &apos; C B A&apos;]
+      ],
+      3, &apos; C A B&apos;, &apos;&apos;, &apos;&apos;, {}, null);</code>
+</code></pre><p>will tabulate a contest that:</p>
+<ul>
+<li>Produces one winner.</li>
+<li>Has three candidates with identifiers A, B, and C.</li>
+<li>Has nine ballots, two of which rank C first, B second, and A third.</li>
+<li>Allows a voter to rank up to three candidates.</li>
+<li>Uses a tie breaker ranking for resolving ties, picking for
+elimination the earliest ranked candidate of any tied candidates; so
+C is picked for elimination if tied with A or B (or both) and A is
+picked for elimination if tied only with B.</li>
+<li>No candidates are excluded from the tabulation.</li>
+<li>No candidates are protected from defeat and thus assured of being
+elected.</li>
+<li>Does not specify any special tabulation options.</li>
+<li>Does not use a progress callback function.</li>
+</ul>
+<p>The above example uses a short cut for specifying a sequence of strings
+by writing them in a single, delimiter-separated string with the first
+character specifying what the delimiter is.</p>
+<p>The result of the function is a data object that includes the following
+three properties:</p>
+<ul>
+<li>&apos;elected&apos;, a set of winners.</li>
+<li>&apos;statuses&apos;, a data object showing the status of each candidate.<ul>
+<li>Whether the candidate was elected or defeated.</li>
+<li>The round in which the candidate was elected or defeated.</li>
+<li>The candidate&apos;s vote total when elected or defeated.</li>
+<li>The candidate&apos;s keep factor for the last tabulation iteration.</li>
+<li>Whether the candidate was pre-designated as being excluded or
+protected.</li>
+</ul>
+</li>
+<li>&apos;tally&apos;, a data object showing the round-by-round vote totals and
+other statistics of the tabulation.</li>
+</ul>
+<p>For the example mentioned above, the results would be as if the
+following assignments had occurred:</p>
+<pre><code><code class="source-code prettyprint">results.elected = new Set([&apos;B&apos;])
+results.statuses = {
+      &apos;A&apos;: Status(&apos;A&apos;, &apos;defeated&apos;, 2, D(4.0), D(1.0)),
+      &apos;B&apos;: Status(&apos;B&apos;, &apos;elected&apos;,  2, D(5.0), D(1.0)),
+      &apos;C&apos;: Status(&apos;C&apos;, &apos;defeated&apos;, 1, D(2.0), D(0.0))
+      }
+results.tally = {
+      &apos;A&apos;: [D(4.0), D(4.0)],
+      &apos;B&apos;: [D(3.0), D(5.0)],
+      &apos;C&apos;: [D(2.0),],
+      &apos;:Votes for candidates&apos;: [D(9.0), D(9.0)],
+      &apos;:Overvotes&apos;: [D(0.0), D(0.0)],
+      &apos;:Abstentions&apos;: [D(0.0), D(0.0)],
+      &apos;:Other exhausted&apos;: [D(0.0), D(0.0)],
+      &apos;:Total votes&apos;: [D(0.0), D(0.0)],
+      &apos;:Quota&apos;: [D(4.500000001), D(4.500000001)],
+      &apos;:Total surplus&apos;: [D(0.0), D(0.499999999)],
+      &apos;:Iterations&apos;: [1, 1]
+      }</code>
+</code></pre><p>where <strong><code>D</code></strong> is an alias for the <strong><code>Decimal9</code></strong> class, which is
+used internally to represent numbers of votes.</p>
+<h3 id="caller-gives-data-in-json-files">Caller gives data in JSON files</h3><p>An alternative way to run a tabulation is with the
+<strong><code>WithJson.tabulate()</code></strong> function, where <strong><code>WithJson</code></strong> is the name for
+the default export from the <strong><code>with_json.js</code></strong> file.
+That function reads the
+tabulation input from a named JSON file and writes the results in a JSON
+format to a file.</p>
+<p>For example, the previous example can be tabulated using a file named
+<strong><code>example.json</code></strong> with the following content:</p>
+<pre><code><code class="source-code prettyprint">{
+  &quot;description&quot;: &quot;An example RCV contest&quot;
+  ,&quot;nbrSeatsToFill&quot;: 1
+  ,&quot;candidates&quot;: &quot; A B C&quot;
+  ,&quot;ballots&quot;: [
+    [4, &quot; A B C&quot;],
+    [3, &quot; B A C&quot;],
+    [2, &quot; C B A&quot;]
+    ]
+  ,&quot;maxRankingLevels&quot;: 3
+  ,&quot;tie_breaker&quot;: &quot; C A B&quot;
+  ,&quot;excluded&quot;: &quot;&quot;
+  ,&quot;protected&quot;: &quot;&quot;
+  ,&quot;options&quot;: {}
+}</code>
+</code></pre><p>and then executing the Javascript statement:</p>
+<pre><code><code class="source-code prettyprint">async [const results, tab_spec] = WithJson.tabulate(
+      &apos;example.json&apos;, &apos;example-results.json&apos;)</code>
+</code></pre><p>which writes a file <strong><code>example-results.json</code></strong> with the following
+content:</p>
+<pre><code><code class="source-code prettyprint">{
+  &quot;description&quot;: &quot;An example RCV contest&quot;
+  ,&quot;elected&quot;: [&quot;B&quot;]
+  ,&quot;status&quot;: [
+    [&quot;B&quot;, &quot;elected&quot;, 2, 5.0, 1.0],
+    [&quot;A&quot;, &quot;defeated&quot;, 2, 4.0, 1.0],
+    [&quot;C&quot;, &quot;defeated&quot;, 1, 2.0, 0.0]
+  ]
+  ,&quot;tally&quot;: {
+    &quot;B&quot;: [3.0, 5.0],
+    &quot;A&quot;: [4.0, 4.0],
+    &quot;C&quot;: [2.0],
+    &quot;:Votes for candidates&quot;: [9.0, 9.0],
+    &quot;:Overvotes&quot;: [0.0, 0.0],
+    &quot;:Abstentions&quot;: [0.0, 0.0],
+    &quot;:Other exhausted&quot;: [0.0, 0.0],
+    &quot;:Total votes&quot;: [9.0, 9.0],
+    &quot;:Quota&quot;: [4.500000001, 4.500000001],
+    &quot;:Total surplus&quot;: [0.0, 0.499999999],
+    &quot;:Iterations&quot;: [1, 1]
+  }
+}</code>
+</code></pre><p>If the second argument is omitted or set to the empty string, the JSON
+output is printed to <strong><code>stdout</code></strong>.</p>
+<p>The <strong><code>results</code></strong> return value is the same as returned by the
+<strong><code>Meek.tabulate()</code></strong> function.  The second return value is a data
+object that documents the merged tabulation input specifications.  It
+reflects what was found in the input JSON file and any included files.
+The input JSON file can have an &apos;include&apos; property with a value that is
+a list of JSON file names from which other property/values are included,
+but which can be overridden by corresponding property/values in the
+primary input JSON file.</p>
+<p>In the above example, the lines indicating that there are no excluded
+candidates and no protected candidates could be omitted, since those are
+the default values for JSON files.</p>
+<h3 id="command-line-using-json-files">Command line using JSON files</h3><p>A third way to run an RCV tabulation is from the command line using
+Node. This was mentioned in the quick start section.
+The previous example could be run as:</p>
+<pre><code><code class="source-code prettyprint">node path-to/run example.json example-results.json</code>
+</code></pre><p>If the <strong><code>example-results.json</code></strong> argument is omitted or given as an
+empty string, the JSON results are printed to <strong><code>stdout</code></strong>.</p>
+<p>Note that the second command line value, the one following &apos;node&apos;,
+can name either the project directory or its <strong><code>run</code></strong> directory.</p>
+<h2 id="testing">Testing</h2><p>Tests can be run using Jest.  When this package is installed using
+npm, Jest is also installed as one of its development dependencies.</p>
+<p>To run tests, change the working directory to the
+<strong><code>tests</code></strong> directory and run the command:</p>
+<pre><code><code class="source-code prettyprint">npm run test</code>
+</code></pre><p>That should run 21 test suites with a total of 559 tests,
+all without errors, typically in less than 15 seconds,
+though speeds can vary depending on the type of computer being used.</p>
+<p>There are two kinds of tests in the <strong><code>tests</code></strong> directory tree:</p>
+<ul>
+<li><p>more traditional unit tests specified in
+<strong><code>tests/unit/*test.js</code></strong>
+files and which are typically dependent on the internal design and
+implementation details of programs in the <strong><code>src</code></strong> directory.</p>
+</li>
+<li><p>tests with inputs and expected results that are specified in JSON
+files and which are designed to be typically applicable to any
+conforming implementation of the reference rule, except for those
+tests that apply to extensions to the reference rule.</p>
+</li>
+</ul>
+<p>The JSON-based tests are typically run from a *test.js file in the same
+directory as the JSON files specifying the test.  A group of related
+tests are specified in similarly named JSON files, sometimes sharing a
+base JSON file for common data.  For example, files <strong><code>abc-007-1.json</code></strong>
+and <strong><code>abc-007-2.json</code></strong> might specify two related tests and reference
+(include and possibly override) a common <strong><code>abc-007-base.json</code></strong> file.</p>
+<p>The JSON files specify a JSON object which is convertible to a
+Javascript data object and which includes a <strong><code>&quot;description&quot;</code></strong>
+property.</p>
+<p>Global parameters for the JSON-based test cases may be set in the file
+<strong><code>tests/all-tests-spec.json</code></strong>.</p>
+<h2 id="limitations">Limitations</h2><p>This implementation focuses on the core vote counting algorithms and
+does not offer all of the functionality that might be expected to
+support tabulation of an election. For example, it does not directly
+supply support for end-user report formats.</p>
+<p>Neither the programs nor the test cases enforce specific maximum
+limitations on the sizes of input to the STV tabulation.  Sizes of
+contests that can be tabulated generally depend on the amount of
+resources, especially memory, available to the software.</p>
+<p>This package can reliably handle large numeric values up to
+9,000,100 to nine decimal places of accuracy. The program will not
+accept more than that many ballots as input, even if they have been
+pre-summarized into fewer ballot groups.</p>
+<p>Numeric values much larger than that start to lose precision when
+converting to or from native Javascript number values and to or
+from JSON number values.</p>
+<p>This implementation can use ballot trees to more efficiently process
+large numbers of ballots with larger numbers of rankings.  However this
+version does not attempt to strictly minimize the resources that are
+used or to manage a time vs. space tradeoff.</p>
+<p>As an example of what this program can accomplish,
+it has tabulated in a desktop browser
+non-trival contests with half a million individual ballots,
+none of them pre-summarized into multi-ballot ballot groups,
+each ballot ranking 100 candidates,
+and the contest electing 20 winners.
+Such tabulations complete within a few minutes.
+Due to special cases that result in persistently slow convergence rates,
+it is possible that smaller contests could take extraordinarily long
+to tabulate.</p>
+<p>In order to focus on issues of core functionality, all test data has been
+limited to using ASCII characters.</p>
+<h2 id="extensions">Extensions</h2><p>This implementation includes several extensions to the reference rule.
+These include::</p>
+<ul>
+<li>Handling anomalous ranking patterns.</li>
+<li>Reporting some exhausted votes as abstentions.</li>
+<li>An option to always count votes for at least one round.</li>
+<li>An option for whether or in which rounds to check for
+perform alternative defeats
+(a.k.a. multiple defeats).</li>
+<li>An option for when in a round to check for
+performing alternative defeats.</li>
+<li>Support for vacancy re-tabulations,
+including the ability to designate some candidates as being excluded
+(a.k.a. withdrawn)
+and others as being protected
+from defeat and thus be assured of being elected.</li>
+<li>An option for helping tabulations run faster by internally
+representing the rankings of ballots and ballot groups in a
+ballot tree.</li>
+</ul>
+<p>The rest of this section briefly describes each of these extensions.
+The extensions are also described
+in the HTML-based documentation of the public API.</p>
+<p>The anomalous ranking patterns that are allowed include::</p>
+<ul>
+<li>duplicate rankings (ranking the same candidate more than once at
+different ranking levels)</li>
+<li>overvoted rankings (ranking two or more different candidates at
+the same ranking level on a ballot)</li>
+</ul>
+<p>The reference rule implicitly assumes that these anomalous ranking
+patterns do not occur in the ballots submitted for tabulation.  See the
+documentation for the <strong><code>Meek.Tabulation</code></strong> class for the
+specifics of how these anomalous ranking patterns are handled.</p>
+<p>There is an option, turned on by default, that counts votes for the
+first round even if doing so is not required to determine all winners
+because there is not an excess of hopeful candidates.  The reference
+rule can be strictly followed in this regard by using the option
+<code>{&quot;always_count_votes&quot;: false}</code> in Javascript or JSON.
+The value of this option has no effect if
+there is an excess of hopeful candidates and as a result, counting votes
+for one or more rounds is required to determine winners.</p>
+<p>There are two options that control whether and how alternative defeats
+are performed.
+Alternative defeats can involve defeating one or more candidates at a
+point in the tabulation when no candidates or only one candidate would
+be defeated.
+Alternative defeats are also known as multiple defeats, batch defeats,
+and deferred surplus distribution.
+By default, alternative defeats are not performed.</p>
+<p>Alternative defeats can be activated
+with the <strong><code>alternative_defeats</code></strong> option,
+setting it to a value of &quot;Y&quot; value
+or activating it only for certain rounds
+with a sequence of &quot;Y&quot;s and &quot;N&quot;s.</p>
+<p>There is also an option, <strong><code>&quot;type_of_altdefs&quot;</code></strong>,
+that controls the point in the tabulation algorithm
+at which the alternative defeats is checked.
+In order for this option to have an effect on a round,
+the <strong><code>&quot;alternative_defeats&quot;</code></strong> option
+must be a <strong><code>&quot;Y&quot;</code></strong> for the round.
+In addition to doing the check at the end of step B.2.e,
+as allowed by the reference rule,
+there are also options to check in the middle of step B.2.e,
+if no candidates were elected in the iteration,
+or to check at the beginning of step B.3,
+just before doing end-of-round single defeats.</p>
+<p>There is support to exclude and protect candidates.  An excluded
+candidate is not eligible to be elected or receive votes and is marked
+as defeated before the first round of tabulation.  The reference rule
+uses the term &quot;withdrawn&quot; rather than &quot;excluded&quot;.  A protected candidate
+is assured of being elected.</p>
+<p>The ability to exclude and protect candidates can be useful when using
+the ballots of a previous election to fill one or more vacancies.  For a
+typical use case, exclude all previous candidates who are unwilling or
+otherwise not eligible to fill the vacancies, protect all candidates
+that will continue to serve, set the number of seats to fill to the sum
+of the number of protected candidates plus the number of vacancies to
+fill, and then retabulate the contest.</p>
+<p>When there are protected candidates, there are separate quotas for
+protected candidates and unprotected candidates in order to ensure that
+an excess of unprotected candidates will not be elected.</p>
+<p>In order to help tabulations run faster for larger constests, there are
+options to use a ballot tree to represent ballots internally.
+If used, the ballot tree can be either static or dynamic.</p>
+<h2 id="other-commands">Other commands</h2><p>Other development commands defined for this project include:</p>
+<ul>
+<li><p><code>npm run build</code></p>
+<p>Will re-build the node-compatible versions of the programs in the
+<strong><code>run</code></strong> directory.</p>
+</li>
+<li><p><code>npm run build-one -- src/&lt;file-name.js&gt;</code></p>
+<p>Will re-build in the <strong><code>run</code></strong> directory
+a single node-compatible version of the file(s) listed at the 
+end of the command.</p>
+</li>
+<li><p><code>npm run build-docs</code></p>
+<p>Will re-build the HTML-based documentation of the public API
+that is stored in the <strong><code>docs</code></strong> directory.</p>
+</li>
+<li><p><code>node path-to/&lt;package-directory&gt; --version</code></p>
+<p>or</p>
+<p>`node path-to/run --version</p>
+<p>Will print the version number
+which consists of a major, minor, and patch version number
+using semantic versioning.</p>
+</li>
+</ul>
+<h2 id="licensing">Licensing</h2><p>This project is licensed under the Apache License, Version 2.0 (the
+&quot;License&quot;); you may not use contents of this repository except in
+compliance with the License.  A copy of the License is in the LICENSE
+file and may also be obtained at:</p>
+<pre><code><code class="source-code prettyprint">http://www.apache.org/licenses/LICENSE-2.0</code>
+</code></pre><p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+<p>Copyright 2016-2019 David Cary; licensed under Apache License, Version 2.0</p>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

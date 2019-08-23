@@ -1,0 +1,17 @@
+# git global ignore files
+
+# ignore editor backup files
+*~
+*.swp
+*.bak
+
+# ignore doc directories
+/docs
+
+# ignore npm modules directory
+/node_modules
+/package-lock.json
+
+# ignore other files
+/tests/temp_output/*.json
+

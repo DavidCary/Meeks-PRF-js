@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/utils_basic.js | meeks-prfound-js</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="meeks-prfound-js"><meta property="twitter:description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ballot.js~Ballot.html">Ballot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/constants.js~Label.html">Label</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9.html">Decimal9</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Error.html">Decimal9Error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Total.html">Decimal9Total</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekImplementationError.html">MeekImplementationError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekValueError.html">MeekValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/meek.js~Tabulation.html">Tabulation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/progress.js~Progress.html">Progress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/status.js~Status.html">Status</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~Show.html">Show</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBaseError.html">UtilBaseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBasicFunctions.html">UtilBasicFunctions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilValueError.html">UtilValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils_basic.js~UtilBaseError.html">UtilBaseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/validate.js~Validator.html">Validator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getStatusAsString">getStatusAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getTallyAsString">getTallyAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getTallyOrderAsArray">getTallyOrderAsArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getTallyOrderAsLookup">getTallyOrderAsLookup</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getTallySortKey">getTallySortKey</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-printStatus">printStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-printTally">printTally</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tabulate">tabulate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-describeError">describeError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getClassNameOf">getClassNameOf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getItems">getItems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getKeys">getKeys</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getNames">getNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOwnItems">getOwnItems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOwnNames">getOwnNames</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getSortedKeys">getSortedKeys</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getValues">getValues</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-indentMessage">indentMessage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isSafeInteger">isSafeInteger</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toArrayOfStrings">toArrayOfStrings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildTabulateArgs">buildTabulateArgs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readFile">readFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readJson">readJson</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readOptionalJson">readOptionalJson</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readTabulationSpec">readTabulationSpec</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-resultsToJsonString">resultsToJsonString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tabulate">tabulate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-writeFile">writeFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-K">K</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/utils_basic.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @copyright 2016-2019 David Cary;
+ * @license Apache-2.0
+ *
+ * @module UtilBasic
+ * @summary Basic utility functions without other module dependencies
+ */
+
+/** A base class for thrown errors.
+ */
+export class UtilBaseError extends Error {
+  /**
+   * @param {string} [message=&apos;ERROR&apos;] - text describing the error
+   * @param {array} [otherValues=[]] - an array of values,
+   *   each value is typically a two-element array as [description, value].
+   *   Other kinds of values are possible, however.
+   * @param {Error|null} [priorError=null] - an error of some type that was the
+   *   cause for this error being formed. */
+  constructor(message=&apos;ERROR&apos;, otherValues=[], priorError=null) {
+    super(message);
+    /** The message for this error
+     * @type {string} */
+    this.message = message.toString();
+    /** Other values associated with this error and which document additional
+     *    context surrounding the error.
+     * @type {array} */
+    this.otherValues = otherValues;
+    /** The prior error that was a direct cause for this error.
+     * @type {Error|null} */
+    this.priorError = priorError;
+    /** A fuller description of the prior error, created using _describeError()
+     * @type(string) */
+    this.priorErrorDescription = &apos;&apos;;
+    if (this.priorError !== null &amp;&amp;
+          this.priorError instanceof Error) {
+      this.priorErrorDescription = _describeError(this.priorError)
+    }
+    /** The name of the class of this error.
+     * @type{string} */
+    this.name = &apos;UtilBaseError&apos;;
+  }
+
+  _showPriorError() {
+    //&quot;&quot;&quot;Select what to show about the priorError&quot;&quot;&quot;
+    return this.priorError.toString();
+  }
+
+  /** Convert to a string
+   * @return {string} a string representing the error&apos;s message,
+   *   its otherValues, and its priorError, if any. */
+  toString() {
+    let result = [this.name + (this.message ? &apos;: &apos; + this.message : &apos;&apos;)];
+    if (this.otherValues.length) {
+      result.push(this._otherValuesAsStr(this.otherValues));
+    }
+    if (this.priorError) {
+      result.push(&apos;  Prior error:&apos;);
+      result.push(_indentMessage(this._showPriorError(), 4));
+    }
+    result = result.join(&apos;\n&apos;);
+    return result;
+  }
+
+  _otherValuesAsStr(otherValues, indentBy=2) {
+    let result = [];
+    if (otherValues instanceof Array) {
+      this.otherValues.forEach((valueItem, ix) =&gt; {
+        if (valueItem instanceof Array &amp;&amp; valueItem.length === 2) {
+          let value = valueItem[1];
+          result.push(`${valueItem[0].toString().padEnd(25)}=` +
+                ` ${value.toString()}`);
+        } else {
+          result.push(valueItem.toString());
+        }
+      });
+    } else {
+      result.push(otherValues.toString());
+    }
+    result = result.join(&apos;\n&apos;);
+    result = indentMessage(result, indentBy);
+    return result;
+  }
+
+  getClassNameOf(instance) {
+    const result = getClassNameOf(instance);
+    return result;
+  }
+
+  setNameOf() {
+    this.name = getClassNameOf(this);
+  }
+}
+
+/** An error class for invalid data values and types.
+ */
+class UtilValueError extends UtilBaseError {
+  /** The calling convention is the same as for UtilBaseError. */
+  constructor(message, otherValues=[], baseError=null) {
+    super(message, otherValues, baseError);
+    this.name = &apos;UtilBaseError&apos;;
+  }
+}
+
+/** Create a multi-line description of an error and its traceback
+ * @param {Error} err - a caught exception
+ * @return {string} a multi-line string showing message and traceback
+ *   of err */
+function describeError(err) {
+  //&quot;&quot;&quot;
+  let parts = [];
+  parts.push(&apos;Error description:&apos;);
+  parts.push(indentMessage(err.toString()));
+  if (err.stack) {
+    parts.push(&apos;Error stack:&apos;);
+    parts.push(indentMessage(err.stack.toString()));
+  } else {
+    parts.push(`  ${err.toString()}:`);
+  }
+  if (err.baseError) {
+    parts.push(&apos;Base Error:&apos;);
+    parts.push(indentMessage(describeError(err.baseError), 2));
+  }
+  parts.push(&apos;END Error description&apos;);
+  let result = parts.join(&quot;\n&quot;);
+  return result;
+}
+
+/** Indent a possibly multi-line text string
+ *
+ * @param {string} message - the message string to indent
+ * @param {number} [indentBy=2] - the number of spaces to indent each line
+ *   of the message
+ * @return {string} a string with the indentations added to each line */
+function indentMessage(message, indentBy=2) {
+  const indentStr = &apos; &apos;.repeat(indentBy);
+  const tail = &apos;&apos;;
+  let mainMessage = message.toString();
+  //console.log(&apos;typeof mainMessage=&apos;+typeof mainMessage);
+  //console.log(&apos;mainMessage.valueOf()=&apos;+mainMessage.valueOf());
+  if (mainMessage &amp;&amp; mainMessage.slice(-1) === &apos;\n&apos;) {
+    tail = &apos;\n&apos;;
+    mainMessage = message.slice(0,-1);
+  }
+  const newMessage = (indentStr + mainMessage.replace(/\n/g, &apos;\n&apos; + indentStr) +
+        tail);
+  return newMessage;
+}
+
+function getClassNameOf(instance) {
+  let result = &apos;&apos;;
+  if (typeof instance != &apos;object&apos; || instance === null) {
+    return result;
+  }
+  const prototype = Object.getPrototypeOf(instance);
+  if (&apos;constructor&apos; in prototype &amp;&amp; &apos;name&apos; in prototype.constructor) {
+    result = prototype.constructor.name;
+    if (typeof result == &apos;string&apos;) {
+      return result;
+    }
+  }
+  return &apos;&apos;;
+}
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

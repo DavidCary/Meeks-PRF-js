@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">Tabulation | Public API | Meeks-PRF-js</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Public API | Meeks-PRF-js"><meta property="twitter:description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ballot.js~Ballot.html">Ballot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9.html">Decimal9</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Error.html">Decimal9Error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/decimal9.js~Decimal9Total.html">Decimal9Total</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekImplementationError.html">MeekImplementationError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~MeekValueError.html">MeekValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/meek.js~Tabulation.html">Tabulation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/progress.js~Progress.html">Progress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/results.js~Results.html">Results</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/status.js~Status.html">Status</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBaseError.html">UtilBaseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilBasicFunctions.html">UtilBasicFunctions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util_basic.js~UtilValueError.html">UtilValueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/validate.js~Validator.html">Validator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/with_json.js~WithJson.html">WithJson</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tabulate">tabulate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-K">K</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UBF">UBF</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Tabulation} from &apos;<span><a href="file/src/meek.js.html#lineNumber251">meeks-prfound-js/src/meek.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/src/meek.js.html#lineNumber251">source</a></span></span>
+</div>
+
+<div class="self-detail detail">
+  <h1 data-ice="name">Tabulation</h1>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <div class="description" data-ice="description"><p>A class for Meek tabulations per prfound.org&apos;s reference rule,
+plus extensions.</p>
+<p>Implements the tabulation logic for Meek RCV / STV as described at:</p>
+<p>  <a href="https://prfound.org/resources/reference/reference-meek-rule/">https://prfound.org/resources/reference/reference-meek-rule/</a></p>
+<p>Typical use of this class is to instantiate it and then run its
+tabulate() method to get the results.</p>
+<p>This tabulation class differs from the reference rule for Meek&apos;s
+method, as described by prfound.org in several ways.</p>
+<p>This tabulation routine accepts ballots that have anomalous
+ranking patterns, such as duplicate rankings (ranking the same
+candidate at more than one ranking level), skipped ranking levels,
+and overvoted ranking levels (more than one candidate ranked at the
+same ranking level).
+The prfound.org algorithm is described in terms that implicitly
+assume that such duplicate rankings and overvoted ranking levels do
+not exist in the ballots it processes.</p>
+<p>For a duplicate ranking, this tabulation will consider only the most
+preferred ranking of a candidate, rankings at less preferred ranking
+levels for the same candidate are ignored.</p>
+<p>An empty ranking level, a ranking level without a ranking, is
+ignored, whether or not less preferred ranking levels do have
+rankings.</p>
+<p>An overvoted ranking level causes that ranking level and all less
+preferred ranking levels to be ignored.</p>
+<h2 id="terminology">Terminology</h2><p>Several arguments or parts of an argument are or can be an ordered
+collection of string values.</p>
+<p>An ordered collection of string values may be represented as one of
+the following:</p>
+<ul>
+<li>an array of strings</li>
+<li>a delimiter-first string, which is a string in which the first
+character is the delimiter, followed by the component string
+values separated by the delimiter.
+The delimiter character may not be part of any of the component
+string values.</li>
+</ul>
+<p>The following Javascript expressions specify equivalent ordered
+collections of string values:</p>
+<pre><code><code class="source-code prettyprint"> [&apos;A&apos;, &apos;B&apos;, &apos;&apos;, &apos;C&apos;, &apos;#&apos;, &apos;D&apos;]
+ &apos; A B  C # D&apos;
+ &apos;|A|B||C|#|D&apos;</code>
+</code></pre><p>As a special case, the empty string is considered a delimiter-first
+string that repreesents the empty array.
+Also, a delimiter-first string with just one character represents an
+array with just one empty string in it.</p>
+<p>Values that use an ordered collection of string values include those
+for specifying candidates, a tieBreaker, the rankings for a ballot,
+and certain values for the sub-option &apos;alternativeDefeats&apos;.</p>
+<p>Other values require an unordered collection of string values.
+They are specified as an ordered collection of string values,
+either as an array of strings or as a delimiter-first string,
+but the ordering is not significant.
+This is used for the excluded and protected values.</p>
+</div>
+  
+
+  
+
+  
+
+  
+
+  
+</div>
+
+
+
+<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/meek.js~Tabulation.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(nbrSeatsToFill: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, candidates: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt;, ballots: <span>array</span>, maxRankingLevels: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null">null</a></span>, tieBreaker: <span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, excluded: <span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, protectedzz: <span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, progressCallback: <span><a href="class/src/progress.js~Progress.html">Progress</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Initialize a tabulation for a Meek STV contest per prfound.org</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/meek.js~Tabulation.html#instance-method-tabulate">tabulate</a></span></span><span class="code" data-ice="signature">(kwargs: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="class/src/results.js~Results.html">Results</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Perform a tabulation of an RCV / STV Meek contest.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-constructor-constructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(nbrSeatsToFill: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, candidates: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt;, ballots: <span>array</span>, maxRankingLevels: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null">null</a></span>, tieBreaker: <span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, excluded: <span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, protectedzz: <span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, progressCallback: <span><a href="class/src/progress.js~Progress.html">Progress</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/meek.js.html#lineNumber583">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Initialize a tabulation for a Meek STV contest per prfound.org</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">nbrSeatsToFill</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The number of seats to fill, an integer that is at least one.
+  This is also sometimes referred to as the maximum allowed number
+  of winners or the number of candidates to elect.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">candidates</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt;</td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>An ordered collection of strings, each of which servers as the
+  unique candidate identifier for its candidate.
+  A candidate identifier is sometimes referred to as a
+  a candidate ID, a candId, a candidate name, or a ranking code.
+  A candidate identifier may not begin with a colon (&apos;:&apos;),
+  may not be the empty string, and may not be the string &apos;#&apos;.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">ballots</td>
+      <td data-ice="type" class="code"><span>array</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>An array of ballot groups.</p>
+<p>A ballot group represents a number of ballots with the same
+rankings.
+A ballot group can be specified as an array of length two with
+the following values:</p>
+<ul>
+<li><p>multiple
+A positive integer indicating how many individual ballots are
+summarized into this ballot group.</p>
+</li>
+<li><p>rankings
+An ordered collection of strings,
+each of which is a candidate identifier or other
+ranking code,
+ordered from most preferred first to least preferred last.</p>
+<p>Other ranking codes are:</p>
+<ul>
+<li>The empty string, indicating an empty ranking level.</li>
+<li>The string &apos;#&apos;, indicating an overvote ranking.</li>
+</ul>
+<p>A trailing empty ranking does not have to be specified.</p>
+</li>
+</ul>
+<p>A ballot group can also be specified with just its rankings,
+letting its multiple default to 1.
+The rankings can be specified
+either as an array of strings or as a delimiter-first string.</p>
+<p>So the following are equivalent ways of specifying a ballot group
+that represents just one ballot:</p>
+<pre><code><code class="source-code prettyprint"> [1, [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]]
+ [1, &quot; A B C&quot;]
+ [1, &quot;&gt;A&gt;B&gt;C&quot;]
+ [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+ &quot; A B C&quot;</code>
+</code></pre></td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">maxRankingLevels</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null">null</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The maximum number of candidates that each voter is allowed to
+  rank on a ballot, i.e. the maximum length of a ballot&apos;s rankings,
+  when expressed as an array.
+  The value for maxRankingLevels must be null
+  or an integer that is at least three.
+  If it is null,
+  there is no restriction on the length of a ballot&apos;s rankings.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">tieBreaker</td>
+      <td data-ice="type" class="code"><span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>An ordered collection of candidate identifiers.
+  Whenever two or more candidates are tied to be defeated,
+  the tied candidate that is listed earliest in the tieBreaker
+  is chosen to be defeated,
+  provided that all of the tied candidates are listed in the
+  tieBreaker.</p>
+<p>  The tieBreaker can represent a random ordering of the candidates,
+  determined by lot.
+  This is a sufficient tie breaking procedure
+  that is compatible with the prfound.org reference rule.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">excluded</td>
+      <td data-ice="type" class="code"><span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>An unordered collection of candidate identifiers
+  for those candidates that are excluded (a.k.a. withdrawn)
+  from the tabulation.
+  An excluded candidate is not eligible to be elected
+  or receive votes,
+  is never a hopeful candidate during the tabulation,
+  and is designated as defeated before the first round of
+  tabulation begins.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">protectedzz</td>
+      <td data-ice="type" class="code"><span>array</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>An unordered collection of candidate identifiers
+  that are protected from being defeated
+  and so are guaranteed of being elected.</p>
+<p>  A protected candidated is not allowed to also be an excluded
+  candidate.
+  The number of protected candidates may not be more than the
+  number of seats to fill.</p>
+<p>  Designating protected candidates can be useful for example
+  when filling a vacancy by retabulating the ballots of a
+  previous election.</p>
+<p>  When there are protected candidates,
+  there are separate quotas for protected candidates and
+  unprotected candidates,
+  in order to assure that an excess of unprotected candidates
+  are not elected.</p>
+<p>  Protected candidates are elected subject to a protected quota,
+  which is equal to what the regular quota would otherwise be
+  if no candidates were protected.
+  A protected candidate will be elected at the end
+  of a tabulation if the candidate was not already elected by
+  reaching the protected quota.</p>
+<p>  Unprotected candidates are elected subject to a quota that is
+  typically higher than the regular quota, and declines as
+  protected candidates increase their non-surplus votes.
+  If all protected candidates are elected by reaching the
+  protected quota,
+  the quota for unprotected candidates reduces to approximately
+  (allowing for small differences related to rounding and finite
+  precision arithmetic)
+  what the regular quota would be if no candidates were
+  protected.</p>
+<p>  More specifically, the quota for unprotected candidates
+  is based on the number seats
+  that are available to unprotected candidates
+  and the number of votes
+  that are counting for
+  or could be transferred to unprotected candidates,
+  given the current protected quota.</p>
+<p>  The number of seats available to unprotected candidates is
+  the number of seats to be filled by the contest
+  minus the number of protected candidates.
+  The number of seats available to unprotected candidates
+  plus one
+  is used in the denominator of the quota calculation.</p>
+<p>  The number of votes used in the numerator
+  of the unprotected quota calculation
+  is equal to the number of votes counting for unprotected
+  candidates
+  plus the number of surplus votes counting for protected
+  candidates
+  (surplus votes in excess of the protected quota).
+  Votes counting for each protected candidate,
+  but only up to the protected quota,
+  are not included in the calculation of the numerator
+  of the unprotected quota.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">options</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>A data object of tabulation options
+containing zero or more of the following keys and values.
+For each key and value, the Javascript identifier is shown and its
+literal string value is shown in parentheses.</p>
+<p> <strong>Default value</strong>: an empty object, such as <code>{ }</code>, is expanded to
+ a data object with each option&apos;s default value:</p>
+<pre><code><code class="source-code prettyprint">{
+  &quot;always_count_votes&quot;: true,
+  &quot;alternative_defeats&quot;: &quot;N&quot;,
+  &quot;type_of_altdefs&quot;: &quot;if_no_new_electeds&quot;,
+  &quot;ballot_tree&quot;: &quot;dynamic&quot;
+}</code>
+</code></pre><ul>
+<li><p><code>alwaysCountVotes</code> (&apos;always_count_votes&apos;)
+A boolean value indicating whether to count votes for the
+first round even if the number of hopeful candidates is less
+than or equal to the number of seats to fill, i.e. all of the
+hopeful candidates can be elected regardless of what the
+first-round vote totals are or whether any votes are counted.</p>
+<p>Allowed values for this option are:</p>
+<ul>
+<li><p><code>yes</code> (true) : Always count votes for the first round.</p>
+</li>
+<li><p><code>no</code> (false) : Do not count votes for any round if winners can
+otherwise be determined.</p>
+</li>
+</ul>
+<p>A value of false specifies tabulation behavior that strictly
+follows the reference rule.
+A value of true provides for an extension
+which does not change which candidates are elected
+and produces the same vote totals as the reference rule,
+except for always producing first-round vote totals.</p>
+<p><strong>Default value</strong>: <code>yes</code> (true)</p>
+</li>
+<li><p><code>alternativeDefeats</code> (&apos;alternative_defeats&apos;)
+A value indicating whether or in which rounds the option to
+perform alternative defeats should be
+exercised if they are otherwise allowed.
+Alternative defeats are also known as multiple simultaneous
+defeats or batch defeats and can involve deferred distribution
+of surplus.
+The value may be a string or an ordered collection of string
+values.</p>
+<p>The value for this option may be one of the following
+case-insensitive string values,
+indicating when to do alternative defeats, if they are
+allowed:</p>
+<ul>
+<li><p><code>yes</code> (&apos;Y&apos;) : yes, every round</p>
+</li>
+<li><p><code>never</code> (&apos;N&apos;) : no, never</p>
+</li>
+</ul>
+<p>The value for this option may also be
+an ordered collection of string values,
+each string value equal to
+one of the values listed above,
+one for each round of the tabulation.
+Extra values are allowed and are ignored.</p>
+<p>Any sequence of round-by-round choices may be replicated with
+this kind of value.</p>
+<p><strong>Default value</strong>: <code>never</code> (&apos;N&apos;)</p>
+<p>The reference rule for when alternative defeats are
+allowed is designed with the goal that performing
+alternative defeats will not change which candidates are elected
+compared to defeating at most one candidate per round.
+However since Meek&apos;s Method only calculates approximations of
+an exact solution to a system of equations, there may be
+cases where performing alternative defeats produces
+a different set of winners.</p>
+</li>
+<li><p><code>typeOfAltDefs</code> (&apos;type_of_altdefs&apos;)
+A string value indicating when during a round or iteration
+the tabulation should check for multiple simultaneous
+defeats,
+provided that they are allowed by the &apos;alternativeDefeats&apos;
+option for that round.
+Allowed values for this option are:</p>
+<ul>
+<li><p><code>perReferenceRule</code> (&apos;per_reference_rule&apos;)
+Check for alternative defeats according to the
+reference rule, at the end of step B.2.e,
+i.e. when it is assured that at least one more iteration
+will be performed for the round.</p>
+<p>This option will not check for
+alternative defeats for the last iteration of a round.
+Some rounds have only one iteration,
+and this option will not check for alternative defeats
+in such rounds.
+For example, a first round which does not elect any
+candidates will have only one iteration.</p>
+</li>
+<li><p><code>beforeSingleDefeats</code> (&apos;before_single_defeats&apos;)
+Check for multiple simultaneous defeats
+at the beginning of reference rule step B.3,
+the step for checking for a single defeat,
+after the last iteration for the round has been completed
+and there were no candidates elected in the round.</p>
+</li>
+<li><p><code>ifNoNewElecteds</code> (&apos;if_no_new_electeds&apos;)
+Check for multiple simultaneous defeats
+in the middle of step B.2.e,
+after checking that there are no candidates elected in
+the round,
+but before checking any conditions for total surplus.</p>
+<p>This option combines the effects of <code>perReferenceRule</code> and
+<code>beforeSingleDefeats</code> and will check for alternative defeats
+after votes are counted for every iteration,
+provided that no candidates have been elected in the round.</p>
+</li>
+</ul>
+<p><strong>Default value</strong>: <code>ifNoNewElecteds</code> (&apos;if_no_new_elected&apos;)</p>
+</li>
+<li><p><code>ballotTree</code> (&apos;ballot_tree&apos;)</p>
+<p>This option specifies whether and how to perform some internal
+optimizations in how ballots are stored for vote counting.
+Storing ballot rankings in a tree structure can significantly
+speed up a larger tabulation.
+Using a tree structure promotes summarization of earlier rankings
+across ballots and ballot groups,
+which means an iteration can have fewer pieces of data to look
+at and fewer calculations to perform.</p>
+<p>Valid values for this option include:</p>
+<ul>
+<li><p><code>dynamic</code> (&apos;dynamic&apos;)</p>
+<p>A dynamic balllot tree is typically the fastest option
+for larger tabulations.
+A dynamic ballot tree maximally summarizes ballot rankings
+across ballots and ballot groups,
+and it only contains tree nodes that might be needed
+during a round.
+The tree is adjusted between rounds to maintain its optimal
+content and structure.</p>
+</li>
+<li><p><code>static</code> (&apos;static&apos;)</p>
+<p>A static ballot tree is typically the second fastest option
+for larger tabulations
+and it is often nearly as fast as
+using a dynamic ballot tree.
+A full ballot tree is built before any rounds are tabulated
+and no adjustments are made between rounds.</p>
+</li>
+<li><p><code>none</code> (&apos;none&apos;)</p>
+<p>A ballot tree is not used.
+This is typically the slowest option for larger tabulations,
+often much slower.
+However it is also the simplest approach and most directly
+follows the language of the reference rule.</p>
+</li>
+</ul>
+<p><strong>Default value</strong>: <code>dynamic</code> (&apos;dynamic&apos;)</p>
+</li>
+</ul>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">progressCallback</td>
+      <td data-ice="type" class="code"><span><a href="class/src/progress.js~Progress.html">Progress</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Determines whether and how tabulation progress is reported.</p>
+<p>  The value can be an instance of Progress or a callback function.</p>
+<p>  If it is a callback function, a new Progress instance is
+  created using that callback function.</p>
+<p>  If no value is provided, no progress reporting is performed.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  <div data-ice="throwWrap">
+    <h4>Throw:</h4>
+    <table>
+      <tbody>
+      
+      <tr class="throw" data-ice="throw">
+        <td><p data-ice="throwName"><span>*</span></p></td>
+        <td data-ice="throwDesc"><p>Same as for <code>Tabulation.tabulate()</code>.</p>
+</td>
+      </tr>
+</tbody>
+    </table>
+  </div>
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-tabulate">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">tabulate</span><span class="code" data-ice="signature">(kwargs: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="class/src/results.js~Results.html">Results</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/meek.js.html#lineNumber832">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Perform a tabulation of an RCV / STV Meek contest.</p>
+<p>Normally this method is called with no arguments.
+However to facilitate unit testing,
+a data object may be provided as way
+to artificially stop the tabulation
+at various points in a given round.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">kwargs</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: {}</li></ul></td>
+      <td data-ice="description"><p>A data object with zero or more of the following properties.</p>
+<p>If a property is missing or has a <code>null</code> value,
+the tabulation is not artificially stopped at that point.</p>
+<ul>
+<li><p>&apos;stopAtBegin&apos;</p>
+<p>The number of a round; stop at the beginning of that round,
+after checking whether to proceed with the round,
+but before doing any iterations.</p>
+</li>
+<li><p>&apos;stopAfterStatusUpdate&apos;</p>
+<p>The number of a round; stop after all iterations for the round
+have completed
+and after updates to the vote tally and status
+have been made.</p>
+</li>
+<li><p>&apos;stopAtEnd&apos;</p>
+<p>The number of a round; stop at the end of that round.</p>
+</li>
+</ul>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/results.js~Results.html">Results</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>An instance of Results, which contains the following three members:</p>
+<ul>
+<li><p><code>elected</code></p>
+<p>A set of candidate identifiers for the candidates
+that have been elected by the tabulation</p>
+</li>
+<li><p><code>statuses</code></p>
+<p>A data object keyed by candidate identifier for every candidate,
+and with each value a Status instance,
+which has the following properties:</p>
+<ul>
+<li><p>candidate</p>
+<p>The candidate&apos;s identifier.</p>
+</li>
+<li><p>status</p>
+<p>A string indicating the candidate&apos;s status: &apos;elected&apos; or
+&apos;defeated&apos;.</p>
+</li>
+<li><p>nbrRound</p>
+<p>The 1-based number of the round for which votes were
+calculated when the candidate was elected or defeated;
+zero if the candidate was excluded.</p>
+</li>
+<li><p>votes</p>
+<p>The number of votes the candidate had when elected or
+defeated; null if the candidate was excluded.</p>
+</li>
+<li><p>keepFactor</p>
+<p>The fraction of a ballot&apos;s vote weight that counted for
+the candidate when votes were last tallied/distributed.</p>
+</li>
+<li><p>destiny</p>
+<p>An indication of whether the candidate was excluded or
+protected or neither, i.e. normal.  This attribute may be
+omitted in some formats, including JSON formats, if the
+destiny is normal.</p>
+</li>
+</ul>
+</li>
+<li><p><code>tally</code></p>
+<p>A data object, keyed by candidate identifiers
+and labels for other tabulation categories.
+Values are arrays of round-by-round vote totals
+or other statistics.</p>
+<p>A vote total for the kth round
+is accessed with an index of k-1.
+A candidate has a vote total only for those rounds
+which started with the candidate
+as a hopeful or elected candidate.</p>
+<p>In addition to candidates, there are vote totals or counts for
+all rounds for each of the following keys / tabulation
+categories:</p>
+<ul>
+<li>&apos;:Votes for candidates&apos;</li>
+<li>&apos;:Overvotes&apos;</li>
+<li>&apos;:Abstentions&apos;</li>
+<li>&apos;:Other exhausted&apos;</li>
+<li>&apos;:Total votes&apos;</li>
+<li>&apos;:Protected quota</li>
+<li>&apos;:Quota votes</li>
+<li>&apos;:Quota&apos;</li>
+<li>&apos;:Total surplus&apos;</li>
+<li>&apos;:Iterations&apos;</li>
+</ul>
+<p>Numbers of votes are returned as Decimal9 instances,
+but are typically converted
+to Javascript numbers or JSON numbers in other formats.
+Counts are returned as Javascript integers.</p>
+<p>&apos;:Protected quota&apos; and &apos;:Quota votes&apos; are present
+only if there are some protected candidates.</p>
+<p>&apos;:Quota votes&apos; identifies the number of votes
+used to calculate the &apos;:Quota&apos; for unprotected candidates.
+The quota votes amount is equal to
+the number of votes counting for unprotected candidates,
+plus any surplus votes for protected candidates
+(based on the protected quota).</p>
+<p>The array for the &apos;:Iterations&apos; key contains integer values,
+indicating the number of iterations that were performed for the
+round.</p>
+</li>
+</ul>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

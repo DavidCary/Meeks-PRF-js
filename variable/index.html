@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<meta name="description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Public API | Meeks-PRF-js"><meta property="twitter:description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"></head>
+<meta name="description" content="Count votes for a Meek&apos;s method RCV / STV election contest using the prfound.org reference rule, with optional extensions."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/DavidCary/Meeks-PRF-js"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -138,15 +138,15 @@ functions for general use.</p>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import K from &apos;<span><a href="file/src/constants.js.html#lineNumber163">meeks-prfound-js/src/constants.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import K from &apos;<span><a href="file/src/constants.js.html#lineNumber163">meeks-prf-js/src/constants.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>This is a data object that provides various constants that are used
 across multiple modules.
 Some of its values are as if the following initializations had been made:</p>
 <pre><code><code class="source-code prettyprint">K.Decimal = Decimal9; // the Decimal9 class
-K.VERSION_NUMBERS = [ 0, 9, 1 ];
-K.VERSION_STRING = &apos;0.9.1&apos;;
+K.VERSION_NUMBERS = [ 1, 0, 0 ];
+K.VERSION_STRING = &apos;1.0.0&apos;;
 K.ZERO = new Decimal9(0);
 K.ONE = new Decimal9(1);
 K.ULP = new Decimal9(0.000000001); // =  new Decimal9(1, -9);
@@ -261,7 +261,7 @@ K.ROUND = {
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UBF} from &apos;<span><a href="file/src/util_basic.js.html#lineNumber256">meeks-prfound-js/src/util_basic.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UBF} from &apos;<span><a href="file/src/util_basic.js.html#lineNumber256">meeks-prf-js/src/util_basic.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>An alias for the <code>UtilBasicFunctions</code> class,

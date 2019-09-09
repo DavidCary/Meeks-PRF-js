@@ -70,10 +70,9 @@ Any form of STV tends to provide fairer results than other
 traditional election methods
 and greatly reduces the practical opportunities for tactical
 voting.
-However Meek's method accomplishes this better than
-and precludes some of the opportunities for tactical voting
-that still exist with other forms of STV, including varieties of WIGM.
-However the tradeoff is that Meek's method is more computationally
+Meek's method tends to accomplish these goals
+better than other forms of STV.
+However the trade-off is that Meek's method is more computationally
 intensive,
 to the extent that it is typically not practical to count votes with
 Meek's method without the assistance of a computer for contests with
@@ -87,11 +86,12 @@ result, provided that any ties are consistently resolved.
 
 ## Version
 
-This is version 0.9.1 of the Meeks-PRF-js project. It has stable, well
-tested functionality.
-The 0.9.x versions will be used to refine initial
-published packaging.
-This version includes similar functionality of v3.0.0 of
+This is version 1.0.0 of the Meeks-PRF-js project.
+It has stable, well tested functionality.
+Unlike earlier versions, this version is intended for general use.
+With this version, discrepancies about the 'type_of_altdefs' option
+were resolved for its default value to be 'if_no_new_electeds'.
+This version includes functionality that is similar to v3.0.0 of
 [a related Python project](
 https://bitbucket.org/David-Cary/meeks-prfound/src/master/),
 with some additional improvements.

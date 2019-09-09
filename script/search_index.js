@@ -1,110 +1,110 @@
 window.esdocSearchIndex = [
   [
-    "meeks-prfound-js/src/ballot.js~ballot",
+    "meeks-prf-js/src/ballot.js~ballot",
     "class/src/ballot.js~Ballot.html",
-    "<span>Ballot</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/ballot.js</span>",
+    "<span>Ballot</span> <span class=\"search-result-import-path\">meeks-prf-js/src/ballot.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/decimal9.js~decimal9",
+    "meeks-prf-js/src/decimal9.js~decimal9",
     "class/src/decimal9.js~Decimal9.html",
-    "<span>Decimal9</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/decimal9.js</span>",
+    "<span>Decimal9</span> <span class=\"search-result-import-path\">meeks-prf-js/src/decimal9.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/decimal9.js~decimal9error",
+    "meeks-prf-js/src/decimal9.js~decimal9error",
     "class/src/decimal9.js~Decimal9Error.html",
-    "<span>Decimal9Error</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/decimal9.js</span>",
+    "<span>Decimal9Error</span> <span class=\"search-result-import-path\">meeks-prf-js/src/decimal9.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/decimal9.js~decimal9total",
+    "meeks-prf-js/src/decimal9.js~decimal9total",
     "class/src/decimal9.js~Decimal9Total.html",
-    "<span>Decimal9Total</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/decimal9.js</span>",
+    "<span>Decimal9Total</span> <span class=\"search-result-import-path\">meeks-prf-js/src/decimal9.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/constants.js~k",
+    "meeks-prf-js/src/constants.js~k",
     "variable/index.html#static-variable-K",
-    "<span>K</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/constants.js</span>",
+    "<span>K</span> <span class=\"search-result-import-path\">meeks-prf-js/src/constants.js</span>",
     "variable"
   ],
   [
-    "meeks-prfound-js/src/errors.js~meekimplementationerror",
+    "meeks-prf-js/src/errors.js~meekimplementationerror",
     "class/src/errors.js~MeekImplementationError.html",
-    "<span>MeekImplementationError</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/errors.js</span>",
+    "<span>MeekImplementationError</span> <span class=\"search-result-import-path\">meeks-prf-js/src/errors.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/errors.js~meekvalueerror",
+    "meeks-prf-js/src/errors.js~meekvalueerror",
     "class/src/errors.js~MeekValueError.html",
-    "<span>MeekValueError</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/errors.js</span>",
+    "<span>MeekValueError</span> <span class=\"search-result-import-path\">meeks-prf-js/src/errors.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/progress.js~progress",
+    "meeks-prf-js/src/progress.js~progress",
     "class/src/progress.js~Progress.html",
-    "<span>Progress</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/progress.js</span>",
+    "<span>Progress</span> <span class=\"search-result-import-path\">meeks-prf-js/src/progress.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/results.js~results",
+    "meeks-prf-js/src/results.js~results",
     "class/src/results.js~Results.html",
-    "<span>Results</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/results.js</span>",
+    "<span>Results</span> <span class=\"search-result-import-path\">meeks-prf-js/src/results.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/status.js~status",
+    "meeks-prf-js/src/status.js~status",
     "class/src/status.js~Status.html",
-    "<span>Status</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/status.js</span>",
+    "<span>Status</span> <span class=\"search-result-import-path\">meeks-prf-js/src/status.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/meek.js~tabulation",
+    "meeks-prf-js/src/meek.js~tabulation",
     "class/src/meek.js~Tabulation.html",
-    "<span>Tabulation</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/meek.js</span>",
+    "<span>Tabulation</span> <span class=\"search-result-import-path\">meeks-prf-js/src/meek.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/util_basic.js~ubf",
+    "meeks-prf-js/src/util_basic.js~ubf",
     "variable/index.html#static-variable-UBF",
-    "<span>UBF</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/util_basic.js</span>",
+    "<span>UBF</span> <span class=\"search-result-import-path\">meeks-prf-js/src/util_basic.js</span>",
     "variable"
   ],
   [
-    "meeks-prfound-js/src/util_basic.js~utilbaseerror",
+    "meeks-prf-js/src/util_basic.js~utilbaseerror",
     "class/src/util_basic.js~UtilBaseError.html",
-    "<span>UtilBaseError</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/util_basic.js</span>",
+    "<span>UtilBaseError</span> <span class=\"search-result-import-path\">meeks-prf-js/src/util_basic.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/util_basic.js~utilbasicfunctions",
+    "meeks-prf-js/src/util_basic.js~utilbasicfunctions",
     "class/src/util_basic.js~UtilBasicFunctions.html",
-    "<span>UtilBasicFunctions</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/util_basic.js</span>",
+    "<span>UtilBasicFunctions</span> <span class=\"search-result-import-path\">meeks-prf-js/src/util_basic.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/util_basic.js~utilvalueerror",
+    "meeks-prf-js/src/util_basic.js~utilvalueerror",
     "class/src/util_basic.js~UtilValueError.html",
-    "<span>UtilValueError</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/util_basic.js</span>",
+    "<span>UtilValueError</span> <span class=\"search-result-import-path\">meeks-prf-js/src/util_basic.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/validate.js~validator",
+    "meeks-prf-js/src/validate.js~validator",
     "class/src/validate.js~Validator.html",
-    "<span>Validator</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/validate.js</span>",
+    "<span>Validator</span> <span class=\"search-result-import-path\">meeks-prf-js/src/validate.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/with_json.js~withjson",
+    "meeks-prf-js/src/with_json.js~withjson",
     "class/src/with_json.js~WithJson.html",
-    "<span>WithJson</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/with_json.js</span>",
+    "<span>WithJson</span> <span class=\"search-result-import-path\">meeks-prf-js/src/with_json.js</span>",
     "class"
   ],
   [
-    "meeks-prfound-js/src/meek.js~tabulate",
+    "meeks-prf-js/src/meek.js~tabulate",
     "function/index.html#static-function-tabulate",
-    "<span>tabulate</span> <span class=\"search-result-import-path\">meeks-prfound-js/src/meek.js</span>",
+    "<span>tabulate</span> <span class=\"search-result-import-path\">meeks-prf-js/src/meek.js</span>",
     "function"
   ],
   [

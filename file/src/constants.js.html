@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<meta name="description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Public API | Meeks-PRF-js"><meta property="twitter:description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"></head>
+<meta name="description" content="Count votes for a Meek&apos;s method RCV / STV election contest using the prfound.org reference rule, with optional extensions."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/DavidCary/Meeks-PRF-js"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -63,7 +63,7 @@
 import {Decimal9} from &apos;./decimal9.js&apos;;
 
 /** Major, minor, patch version numbers using semantic versioning */
-const _versionNumbers = [0, 9, 1];
+const _versionNumbers = [1, 0, 0];
 /** Major, minor, patch version as a string */
 const _versionString = _versionNumbers.join(&apos;.&apos;);
 
@@ -136,8 +136,8 @@ const _options = new _Option(&apos;option&apos;, &apos;options&apos;, [
  * 
  * ~~~
  * K.Decimal = Decimal9; // the Decimal9 class
- * K.VERSION_NUMBERS = [ 0, 9, 1 ];
- * K.VERSION_STRING = &apos;0.9.1&apos;;
+ * K.VERSION_NUMBERS = [ 1, 0, 0 ];
+ * K.VERSION_STRING = &apos;1.0.0&apos;;
  * K.ZERO = new Decimal9(0);
  * K.ONE = new Decimal9(1);
  * K.ULP = new Decimal9(0.000000001); // =  new Decimal9(1, -9);

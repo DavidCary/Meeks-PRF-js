@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<meta name="description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Public API | Meeks-PRF-js"><meta property="twitter:description" content="Tabulate Meek&apos;s method using prfound.org reference rule, with extensions"></head>
+<meta name="description" content="Count votes for a Meek&apos;s method RCV / STV election contest using the prfound.org reference rule, with optional extensions."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/DavidCary/Meeks-PRF-js"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -101,10 +101,9 @@ Any form of STV tends to provide fairer results than other
 traditional election methods
 and greatly reduces the practical opportunities for tactical
 voting.
-However Meek&apos;s method accomplishes this better than
-and precludes some of the opportunities for tactical voting
-that still exist with other forms of STV, including varieties of WIGM.
-However the tradeoff is that Meek&apos;s method is more computationally
+Meek&apos;s method tends to accomplish these goals
+better than other forms of STV.
+However the trade-off is that Meek&apos;s method is more computationally
 intensive,
 to the extent that it is typically not practical to count votes with
 Meek&apos;s method without the assistance of a computer for contests with
@@ -113,11 +112,12 @@ more than a few winners.</p>
 Foundation is particularly significant because it ensures that
 independent but conforming implementations will always produce the same
 result, provided that any ties are consistently resolved.</p>
-<h2 id="version">Version</h2><p>This is version 0.9.1 of the Meeks-PRF-js project. It has stable, well
-tested functionality.
-The 0.9.x versions will be used to refine initial
-published packaging.
-This version includes similar functionality of v3.0.0 of
+<h2 id="version">Version</h2><p>This is version 1.0.0 of the Meeks-PRF-js project.
+It has stable, well tested functionality.
+Unlike earlier versions, this version is intended for general use.
+With this version, discrepancies about the &apos;type_of_altdefs&apos; option
+were resolved for its default value to be &apos;if_no_new_electeds&apos;.
+This version includes functionality that is similar to v3.0.0 of
 <a href="https://bitbucket.org/David-Cary/meeks-prfound/src/master/">a related Python project</a>,
 with some additional improvements.</p>
 <h2 id="repository-structure">Repository structure</h2><p>The <strong><code>src</code></strong> directory contains the Javascript

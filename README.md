@@ -25,7 +25,7 @@ by creating a new directory / folder, for example __`meeks-prf`__,
 and then from the command line, changing to that directory and running
 the command:
 
-    npm install @dcary/meeks-prf-js
+    npm install meeks-prf-js
 
 You can then tabulate a contest with the command:
 

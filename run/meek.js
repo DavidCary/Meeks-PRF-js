@@ -548,7 +548,7 @@ class Tabulation {
    *     after votes are counted for every iteration,
    *     provided that no candidates have been elected in the round.
    *
-   *   __Default value__: `ifNoNewElecteds` ('if_no_new_elected')
+   *   __Default value__: `ifNoNewElecteds` ('if_no_new_electeds')
    *
    * - `ballotTree` ('ballot_tree')
    *
@@ -639,7 +639,7 @@ class Tabulation {
       const optionsValidated = validator.options(this._options);
       this._options = {};
       this._options[_constants.default.OPTIONS.alternativeDefeats._value] = _constants.default.OPTIONS.alternativeDefeats.never;
-      this._options[_constants.default.OPTIONS.typeOfAltDefs._value] = _constants.default.OPTIONS.typeOfAltDefs.beforeSingleDefeats;
+      this._options[_constants.default.OPTIONS.typeOfAltDefs._value] = _constants.default.OPTIONS.typeOfAltDefs.ifNoNewElecteds;
       this._options[_constants.default.OPTIONS.alwaysCountVotes._value] = _constants.default.OPTIONS.alwaysCountVotes.yes;
       this._options[_constants.default.OPTIONS.ballotTree._value] = _constants.default.OPTIONS.ballotTree.dynamic;
 

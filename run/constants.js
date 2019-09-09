@@ -16,7 +16,7 @@ var _decimal = require("./decimal9.js");
  */
 
 /** Major, minor, patch version numbers using semantic versioning */
-const _versionNumbers = [0, 9, 1];
+const _versionNumbers = [1, 0, 0];
 /** Major, minor, patch version as a string */
 
 const _versionString = _versionNumbers.join('.');
@@ -76,8 +76,8 @@ const _options = new _Option('option', 'options', [new _Option('alternativeDefea
  * 
  * ~~~
  * K.Decimal = Decimal9; // the Decimal9 class
- * K.VERSION_NUMBERS = [ 0, 9, 1 ];
- * K.VERSION_STRING = '0.9.1';
+ * K.VERSION_NUMBERS = [ 1, 0, 0 ];
+ * K.VERSION_STRING = '1.0.0';
  * K.ZERO = new Decimal9(0);
  * K.ONE = new Decimal9(1);
  * K.ULP = new Decimal9(0.000000001); // =  new Decimal9(1, -9);

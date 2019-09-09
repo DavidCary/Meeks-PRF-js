@@ -1,12 +1,16 @@
 {
   "name": "meeks-prf-js",
-  "version": "0.9.1",
+  "version": "1.0.0",
   "description": "Count votes for a Meek's method RCV / STV election contest using the prfound.org reference rule, with optional extensions.",
   "main": "/run/meek.js",
   "directories": {
     "test": "tests"
   },
-  "files": ["/src", "/run", "/index.js"],
+  "files": [
+    "/src",
+    "/run",
+    "/index.js"
+  ],
   "dependencies": {
     "big-integer": "^1.6.44"
   },
@@ -22,7 +26,7 @@
   "scripts": {
     "test": "jest",
     "build-docs": "esdoc",
-    "build" : "babel --out-dir run src",
+    "build": "babel --out-dir run src",
     "build-one": "babel --out-dir run --"
   },
   "repository": {

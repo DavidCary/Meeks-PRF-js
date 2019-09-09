@@ -430,7 +430,7 @@ class WithJson {
    * so that Node's `process.argv` array can be used to retrieve
    * the command line arguments.
    */
-  static cliTabulate(versionClass) {
+  static cliTabulate() {
     if (process && process.argv &&
           Array.isArray(process.argv) &&
       process.argv.length >= 2) {

@@ -522,7 +522,7 @@ export class Tabulation {
    *     after votes are counted for every iteration,
    *     provided that no candidates have been elected in the round.
    *
-   *   __Default value__: `ifNoNewElecteds` ('if_no_new_elected')
+   *   __Default value__: `ifNoNewElecteds` ('if_no_new_electeds')
    *
    * - `ballotTree` ('ballot_tree')
    *
@@ -620,7 +620,7 @@ export class Tabulation {
       this._options[K.OPTIONS.alternativeDefeats._value] =
             K.OPTIONS.alternativeDefeats.never;
       this._options[K.OPTIONS.typeOfAltDefs._value] =
-            K.OPTIONS.typeOfAltDefs.beforeSingleDefeats;
+            K.OPTIONS.typeOfAltDefs.ifNoNewElecteds;
       this._options[K.OPTIONS.alwaysCountVotes._value] =
             K.OPTIONS.alwaysCountVotes.yes;
       this._options[K.OPTIONS.ballotTree._value] =

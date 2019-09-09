@@ -45,7 +45,7 @@ describe('create tabulation', () => {
     expect(tab1._protectedzz).toMatchObject(new Set());
     expect(tab1._options).toMatchObject({
           'alternative_defeats': 'N',
-          'type_of_altdefs': 'before_single_defeats',
+          'type_of_altdefs': 'if_no_new_electeds',
           'always_count_votes': true,
     });
   });
